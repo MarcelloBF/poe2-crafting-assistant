@@ -1,7 +1,7 @@
 {
   "name": "poe2-crafting-assistant",
   "private": true,
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "module",
   "description": "POE2 Crafting Assistant - planejamento, cálculo e tutorial de crafting para Path of Exile 2",
   "license": "MIT",
