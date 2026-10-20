@@ -140,6 +140,12 @@ describe('candidatos e comparação', () => {
     const noPrice = pickProfiles([fake('a', 0.1, null, 3), fake('b', 0.5, null, 3)]);
     expect(noPrice.limitationKeys).toContain('cmp.limit.prices');
     expect(noPrice.economical.criterionKey).toBe('cmp.crit.ecoUnits');
+    // 1 sucesso em 100 é sorte: não vence quem tem amostra suficiente, mesmo sendo "mais barato".
+    const sorte = { ...fake('sorte', 0.01, 0.01, 1), stats: { ...fake('sorte', 0.01, 0.01, 1).stats, successes: 1 } };
+    const amostra = pickProfiles([sorte, fake('real', 0.2, 50, 5)]);
+    expect(amostra.economical.strategyId).toBe('real');
+    expect(amostra.limitationKeys).not.toContain('cmp.limit.fewSamples');
+    expect(pickProfiles([sorte]).limitationKeys).toContain('cmp.limit.fewSamples');
     // Comprar o item pronto sem preço conhecido não pode vencer nenhum perfil (custo desconhecido ≠ barato).
     const buy = { ...fake('comprar', 1, null, 1), strategy: { ...basic, id: 'comprar', params: { ...basic.params, buy: 'both' } } };
     const withBuy = pickProfiles([buy, fake('a', 0.2, null, 5), fake('b', 0.4, null, 6)]);

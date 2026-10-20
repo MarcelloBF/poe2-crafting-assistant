@@ -15,6 +15,8 @@ export interface Settings {
   /** Mostrar classes que existem nos arquivos do jogo mas ainda não foram lançadas. */
   showUnreleased: boolean;
   guideDismissed: boolean;
+  /** O jogador escolheu os pesos por conta própria (senão vale o padrão, decaimento por tier). */
+  weightsChosen?: boolean;
 }
 
 export interface Draft {
@@ -43,7 +45,8 @@ const KEY = 'poe2ca.v1';
 
 export const DEFAULT_SETTINGS: Settings = {
   lang: 'pt-BR',
-  hypothesis: { kind: 'none' },
+  // Padrão estimado (com selo "Estimado" em todo resultado): sem pesos o comparador não gera plano nenhum.
+  hypothesis: { kind: 'tierDecay', factor: 0.7 },
   simRuns: 5000,
   compareRuns: 2000,
   league: 'Standard',
@@ -72,7 +75,10 @@ function load(): AppState {
     const d = defaults();
     // Essências cadastradas no formato antigo (um mod só) são descartadas: a tabela do jogo agora vem no dataset.
     const essences = Array.isArray(parsed.essences) ? parsed.essences.filter((e: { effects?: unknown }) => Array.isArray(e.effects)) : [];
-    return { ...d, ...parsed, essences, settings: { ...d.settings, ...parsed.settings }, draft: { ...d.draft, ...parsed.draft } };
+    const settings: Settings = { ...d.settings, ...parsed.settings };
+    // Versões até 1.0.6 começavam em "sem pesos": quem nunca escolheu passa para o novo padrão.
+    if (settings.hypothesis.kind === 'none' && !settings.weightsChosen && !parsed.weightTable) settings.hypothesis = d.settings.hypothesis;
+    return { ...d, ...parsed, essences, settings, draft: { ...d.draft, ...parsed.draft } };
   } catch {
     return defaults();
   }

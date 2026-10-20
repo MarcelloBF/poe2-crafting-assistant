@@ -108,7 +108,7 @@ export function SettingsPage() {
                   type="radio"
                   name="hyp"
                   checked={settings.hypothesis.kind === k}
-                  onChange={() => updateSettings({ hypothesis: k === 'tierDecay' ? { kind: 'tierDecay', factor: 0.7 } : { kind: k } })}
+                  onChange={() => updateSettings({ hypothesis: k === 'tierDecay' ? { kind: 'tierDecay', factor: 0.7 } : { kind: k }, weightsChosen: true })}
                 />
                 {t(`set.hyp.${k}`)}
               </label>
@@ -122,7 +122,7 @@ export function SettingsPage() {
                   max={1}
                   step={0.05}
                   value={settings.hypothesis.factor}
-                  onChange={(e) => updateSettings({ hypothesis: { kind: 'tierDecay', factor: Math.min(1, Math.max(0.05, Number(e.target.value) || 0.7)) } })}
+                  onChange={(e) => updateSettings({ hypothesis: { kind: 'tierDecay', factor: Math.min(1, Math.max(0.05, Number(e.target.value) || 0.7)) }, weightsChosen: true })}
                   style={{ width: '6em' }}
                 />
               </label>

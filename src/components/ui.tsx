@@ -115,8 +115,10 @@ export function WeightsBanner() {
       <strong>{t('weights.banner.title')}</strong>
       <p>{t('weights.banner.body')}</p>
       <div className="row wrap">
-        <button onClick={() => updateSettings({ hypothesis: { kind: 'uniform' } })}>{t('weights.banner.useUniform')}</button>
-        <button onClick={() => updateSettings({ hypothesis: { kind: 'tierDecay', factor: 0.7 } })}>{t('weights.banner.useDecay')}</button>
+        <button className="primary" onClick={() => updateSettings({ hypothesis: { kind: 'tierDecay', factor: 0.7 }, weightsChosen: true })}>
+          {t('weights.banner.useDecay')}
+        </button>
+        <button onClick={() => updateSettings({ hypothesis: { kind: 'uniform' }, weightsChosen: true })}>{t('weights.banner.useUniform')}</button>
         <Link className="button ghost" to="/settings#weights">
           {t('weights.banner.import')}
         </Link>

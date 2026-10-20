@@ -9,7 +9,7 @@ import { buyOptions } from '../engine/buy';
 import { BuyOptionCard } from '../components/BuyOptions';
 import { validateTarget } from '../engine/target';
 import { formatNum, formatPct, useT } from '../i18n';
-import { upsertProject, useStore } from '../store/store';
+import { updateSettings, upsertProject, useStore } from '../store/store';
 import { runJob } from '../worker/client';
 import type { CompareResult } from '../worker/protocol';
 
@@ -41,6 +41,8 @@ export function ComparatorPage() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  // Resultado calculado com outros pesos/regras deixa de valer.
+  useEffect(() => setRes(null), [ctx]);
 
   const target = project?.target ?? draft.target;
   if (!target || !ctx.basesById.has(target.baseId)) {
@@ -71,7 +73,9 @@ export function ComparatorPage() {
     }
   }
 
-  runRef.current = errors.length ? undefined : run;
+  // Sem pesos nenhuma estratégia pode ser simulada: pede a escolha em vez de rodar e falhar.
+  const noWeights = ctx.weights.hypothesis.kind === 'none' && !ctx.weights.table;
+  runRef.current = errors.length || noWeights ? undefined : run;
 
   const byId = new Map(res?.comparison.evaluations.map((e) => [e.strategy.id, e]) ?? []);
   const fmtCost = (x: number | null, star = false) => (x == null ? '—' : `${formatNum(x, lang)} ${t('common.exalted')}${star ? '*' : ''}`);
@@ -142,10 +146,18 @@ export function ComparatorPage() {
             </label>
           )}
           <div className="cta-row" style={{ marginTop: '0.6rem' }}>
-            <button className="primary" disabled={busy || errors.length > 0} onClick={run}>
+            <button className="primary" disabled={busy || errors.length > 0 || noWeights} onClick={run}>
               {busy ? `⏳ ${t('common.running')}` : `⚖ ${t('cmp.run')}`}
             </button>
           </div>
+          {noWeights && (
+            <div className="banner warn small">
+              {t('cmp.needWeights')}{' '}
+              <button className="primary" onClick={() => updateSettings({ hypothesis: { kind: 'tierDecay', factor: 0.7 }, weightsChosen: true })}>
+                {t('weights.banner.useDecay')}
+              </button>
+            </div>
+          )}
           <p className="small muted">{t('sim.disclaimer')}</p>
           {error && <div className="banner error small">{error}</div>}
           {applied && <div className="banner ok small">{t('cmp.applied')}</div>}

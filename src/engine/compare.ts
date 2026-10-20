@@ -66,6 +66,8 @@ export function evaluateStrategy(
 
 /** O perfil "Maior consistência" só considera estratégias com custo até este múltiplo da mais barata. */
 export const CONSISTENT_COST_CAP = 3;
+/** Sucessos mínimos na simulação para uma estratégia concorrer aos perfis. */
+export const MIN_PROFILE_SUCCESSES = 5;
 
 function argmin<T>(xs: T[], f: (x: T) => number | null): T | null {
   let best: T | null = null;
@@ -88,7 +90,10 @@ function argmin<T>(xs: T[], f: (x: T) => number | null): T | null {
  * - Equilibrado: menor soma ponderada de posições (custo 40%, 1 - chance 30%, ações 30%).
  */
 export function pickProfiles(evals: StrategyEvaluation[]): Omit<Comparison, 'evaluations'> {
-  const workable = evals.filter((e) => e.stats.successes > 0 && !e.stats.error);
+  // Poucos sucessos na amostra são sorte, não estimativa: só entram nos perfis se nada tiver amostra suficiente.
+  const succeeded = evals.filter((e) => e.stats.successes > 0 && !e.stats.error);
+  const sampled = succeeded.filter((e) => e.stats.successes >= MIN_PROFILE_SUCCESSES);
+  const workable = sampled.length ? sampled : succeeded;
   // Começar de um item comprado sem preço conhecido: a chance alta vem de pagar por mods prontos,
   // então sem o preço não dá para comparar com craftar. Fica na tabela e na recomendação de base.
   const crafted = workable.filter((e) => e.strategy.params.buy == null || e.costPerRun.total != null);
@@ -100,6 +105,7 @@ export function pickProfiles(evals: StrategyEvaluation[]): Omit<Comparison, 'eva
     const none: ProfilePick = { strategyId: null, criterionKey: 'cmp.crit.none' };
     return { economical: none, balanced: none, consistent: none, limitationKeys };
   }
+  if (!sampled.length) limitationKeys.push('cmp.limit.fewSamples');
   if (viable.length < 2) limitationKeys.push('cmp.limit.single');
   // Compara por valor quando ao menos uma estratégia viável tem todos os preços; as demais ficam fora do perfil econômico.
   const priced = viable.filter((e) => e.expectedTotal != null);

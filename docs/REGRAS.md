@@ -112,10 +112,12 @@ O app trata isso explicitamente (Configurações → Pesos):
 
 | Escolha | Efeito na confiança |
 |---|---|
-| Nenhuma (padrão) | Probabilidades que dependem de sorteio ficam **indisponíveis** |
+| Nenhuma | Probabilidades que dependem de sorteio ficam **indisponíveis** e o comparador não roda (pede uma escolha) |
 | Tabela importada (JSON/CSV) | Usa os pesos; "estimado" a menos que a fonte seja marcada como confirmada |
 | Hipótese uniforme | Todos os elegíveis com o mesmo peso — **estimado**, hipótese listada |
-| Decaimento por tier | Peso × fator^(posição acima do tier mais baixo) — **estimado** |
+| Decaimento por tier (padrão, fator 0,7) | Peso × fator^(posição acima do tier mais baixo) — **estimado** |
+
+O padrão era "Nenhuma" até a versão 1.0.6. Com ele o comparador não gerava plano nenhum. Quem nunca mudou essa opção passa automaticamente para o decaimento por tier.
 
 Resultados que não dependem de pesos (0%, 100%, um único candidato) são **confirmados** mesmo sem pesos.
 

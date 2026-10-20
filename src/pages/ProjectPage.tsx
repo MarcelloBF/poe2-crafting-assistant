@@ -170,7 +170,7 @@ export function ProjectPage() {
               <span className="tl-dot">✓</span>
               <div className="tl-label">{t('tut.step', { n: 1 })}</div>
               <div className="tl-title">{t('tut.step1.title')}</div>
-              <p className="small muted">{t('tut.step1.body', { base: base.name, ilvl: project.target.ilvl })}</p>
+              <p className="small muted">{t(project.strategy?.params.buy ? 'tut.step1.bodyBuy' : 'tut.step1.body', { base: base.name, ilvl: project.target.ilvl })}</p>
             </li>
             <li className="done">
               <span className="tl-dot">✓</span>
