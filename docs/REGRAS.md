@@ -154,7 +154,7 @@ regras têm dados desconhecidos são **excluídas e listadas com o motivo**.
 **Perfis do comparador** (critério sempre exibido):
 - **Econômico**: menor custo total esperado; sem todos os preços, menor número esperado de itens
   consumidos (indicado como comparação por quantidade).
-- **Maior consistência**: maior chance de sucesso por base; desempate por menos ações.
+- **Maior consistência**: maior chance de sucesso por base entre as estratégias com custo esperado até 3× o da mais barata (sem preços, o teto vale para a quantidade esperada de itens); desempate por menos ações. Quando uma estratégia com chance maior fica de fora pelo teto, o card avisa.
 - **Equilibrado**: menor soma ponderada das posições em custo (40%), chance de falha (30%) e ações até
   o sucesso (30%).
 

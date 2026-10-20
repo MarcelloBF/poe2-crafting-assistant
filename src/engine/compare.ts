@@ -64,6 +64,9 @@ export function evaluateStrategy(
   return { strategy: s, stats, costPerRun, attempts, expectedTotal, expectedUnits, percentiles, baseExcluded };
 }
 
+/** O perfil "Maior consistência" só considera estratégias com custo até este múltiplo da mais barata. */
+export const CONSISTENT_COST_CAP = 3;
+
 function argmin<T>(xs: T[], f: (x: T) => number | null): T | null {
   let best: T | null = null;
   let bv = Infinity;
@@ -80,7 +83,8 @@ function argmin<T>(xs: T[], f: (x: T) => number | null): T | null {
 /**
  * Escolhe a estratégia de cada perfil, com o critério explícito:
  * - Econômico: menor custo total esperado (ou menor nº esperado de materiais, se faltarem preços).
- * - Maior consistência: maior chance de sucesso por base; desempate pelo menor nº esperado de ações.
+ * - Maior consistência: maior chance de sucesso por base entre as que custam até CONSISTENT_COST_CAP× a mais barata;
+ *   desempate pelo menor nº esperado de ações.
  * - Equilibrado: menor soma ponderada de posições (custo 40%, 1 - chance 30%, ações 30%).
  */
 export function pickProfiles(evals: StrategyEvaluation[]): Omit<Comparison, 'evaluations'> {
@@ -104,7 +108,13 @@ export function pickProfiles(evals: StrategyEvaluation[]): Omit<Comparison, 'eva
   else if (priced.length < viable.length) limitationKeys.push('cmp.limit.somePrices');
   const costOf = (e: StrategyEvaluation) => (allPriced ? e.expectedTotal : e.expectedUnits);
   const eco = argmin(viable, costOf);
-  const cons = [...viable].sort((a, b) => b.stats.pSuccess - a.stats.pSuccess || a.stats.meanActions - b.stats.meanActions)[0];
+  // Consistência dentro de um teto de custo: até CONSISTENT_COST_CAP vezes o custo da opção mais barata.
+  // Sem esse teto, presságios caríssimos ganhavam por poucos pontos de chance a mais.
+  const cheapest = eco ? costOf(eco) : null;
+  const affordable = cheapest != null ? viable.filter((e) => (costOf(e) ?? Infinity) <= CONSISTENT_COST_CAP * cheapest) : viable;
+  const byChance = (xs: StrategyEvaluation[]) => [...xs].sort((a, b) => b.stats.pSuccess - a.stats.pSuccess || a.stats.meanActions - b.stats.meanActions)[0];
+  const cons = byChance(affordable.length ? affordable : viable);
+  const capped = byChance(viable).strategy.id !== cons.strategy.id;
   const rank = (f: (e: StrategyEvaluation) => number) => {
     const sorted = [...viable].sort((a, b) => f(a) - f(b));
     return new Map(sorted.map((e, i) => [e.strategy.id, viable.length > 1 ? i / (viable.length - 1) : 0]));
@@ -115,7 +125,7 @@ export function pickProfiles(evals: StrategyEvaluation[]): Omit<Comparison, 'eva
   const bal = argmin(viable, (e) => 0.4 * rc.get(e.strategy.id)! + 0.3 * rp.get(e.strategy.id)! + 0.3 * ra.get(e.strategy.id)!);
   return {
     economical: { strategyId: eco?.strategy.id ?? null, criterionKey: allPriced ? 'cmp.crit.ecoCost' : 'cmp.crit.ecoUnits', noteKey: allPriced ? undefined : 'cmp.note.unitsNotValue' },
-    consistent: { strategyId: cons.strategy.id, criterionKey: 'cmp.crit.consistent' },
+    consistent: { strategyId: cons.strategy.id, criterionKey: 'cmp.crit.consistent', noteKey: capped ? 'cmp.note.consistentCapped' : undefined },
     balanced: { strategyId: bal?.strategy.id ?? null, criterionKey: 'cmp.crit.balanced' },
     limitationKeys,
   };

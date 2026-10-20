@@ -124,10 +124,15 @@ describe('candidatos e comparação', () => {
       expectedUnits: 1 / p,
       percentiles: null,
     });
-    const r = pickProfiles([fake('barata', 0.1, 1, 3), fake('consistente', 0.9, 50, 3), fake('meio', 0.5, 10, 3)]);
-    expect(r.economical.strategyId).toBe('barata'); // 10 vs 55.6 vs 20
-    expect(r.consistent.strategyId).toBe('consistente');
+    const r = pickProfiles([fake('barata', 0.1, 1, 3), fake('consistente', 0.9, 25, 3), fake('meio', 0.5, 10, 3)]);
+    expect(r.economical.strategyId).toBe('barata'); // 10 vs 27.8 vs 20
+    expect(r.consistent.strategyId).toBe('consistente'); // 27.8 ≤ 3 × 10
+    expect(r.consistent.noteKey).toBeUndefined();
     expect(r.economical.criterionKey).toBe('cmp.crit.ecoCost');
+    // Chance maior, mas custo esperado acima de 3× o mais barato: fica fora do perfil de consistência.
+    const caro = pickProfiles([fake('barata', 0.1, 1, 3), fake('caríssima', 0.95, 500, 3), fake('meio', 0.5, 10, 3)]);
+    expect(caro.consistent.strategyId).toBe('meio');
+    expect(caro.consistent.noteKey).toBe('cmp.note.consistentCapped');
     const mixed = pickProfiles([fake('semPreco', 0.9, null, 3), fake('cara', 0.5, 50, 3), fake('barata', 0.5, 5, 3)]);
     expect(mixed.economical.strategyId).toBe('barata');
     expect(mixed.economical.criterionKey).toBe('cmp.crit.ecoCost');
