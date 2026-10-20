@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "game": "Path of Exile 2",
+  "gameVersion": "0.5.5.4.2",
+  "source": "RePoE-fork (export dos arquivos do cliente do PoE2)",
+  "sourceUrl": "https://repoe-fork.github.io/poe2",
+  "importedAt": "2026-10-20T18:46:13.496Z",
+  "hashes": {
+    "mods": "de686180c7250dcde389358fbf251611b0b677d7672cc66def0dc8f3bd3f481d",
+    "bases": "b7ab7f321083ae91d65439ff3889113e12fecd180593adbd2853ef0ed413d0b6",
+    "stats": "997cf70a7b39a688786f9e96aa2bb5abeaec3b8f70753bad6de8cc519214e1d1"
+  },
+  "counts": {
+    "bases": 1559,
+    "mods": 1889,
+    "desecratedMods": 197,
+    "essences": 82,
+    "essenceEffectsLinked": 123,
+    "essenceEffects": 130,
+    "implicits": 185,
+    "statTranslations": 441
+  },
+  "essenceSource": {
+    "name": "poe2db (tabela de essências gerada dos arquivos do jogo)",
+    "url": "https://poe2db.tw/us/Essence"
+  },
+  "weightsAvailable": false,
+  "release": {
+    "unreleasedClasses": [
+      "Dagger",
+      "Claw",
+      "One Hand Sword",
+      "Two Hand Sword",
+      "One Hand Axe",
+      "Two Hand Axe",
+      "Flail"
+    ],
+    "reviewedAt": "2026-10-20",
+    "source": "Lista mantida manualmente (classes de arma ainda não disponíveis no PoE2)"
+  },
+  "notes": [
+    "spawn_weights do cliente PoE2 são 0/1: indicam elegibilidade, não peso relativo.",
+    "Pesos relativos devem vir de uma fonte externa importada pelo usuário ou de uma hipótese explicitamente marcada como estimativa.",
+    "Textos de modificadores disponíveis apenas em inglês nesta fonte."
+  ]
+}

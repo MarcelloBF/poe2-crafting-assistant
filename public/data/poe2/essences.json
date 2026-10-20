@@ -1,0 +1,2802 @@
+[
+ {
+  "id": "lesser-essence-of-the-body",
+  "nameEn": "Lesser Essence of the Body",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Armour or Belt",
+    "text": "+(30-39) to maximum Life",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Belt"
+    ],
+    "modId": "IncreasedLife3",
+    "modIds": [
+     "IncreasedLife3"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Jewellery",
+    "text": "+(20-29) to maximum Life",
+    "itemClasses": [
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "IncreasedLife2",
+    "modIds": [
+     "IncreasedLife2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-the-mind",
+  "nameEn": "Lesser Essence of the Mind",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Belt, Boots, Gloves, Helmet or Jewellery",
+    "text": "+(25-34) to maximum Mana",
+    "itemClasses": [
+     "Belt",
+     "Boots",
+     "Gloves",
+     "Helmet",
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "IncreasedMana3",
+    "modIds": [
+     "IncreasedMana3"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-enhancement",
+  "nameEn": "Lesser Essence of Enhancement",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Armour",
+    "text": "(27-42)% increased Armour, Evasion and Energy Shield",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots"
+    ],
+    "modId": "LocalIncreasedArmourAndEvasionAndEnergyShield2",
+    "modIds": [
+     "LocalIncreasedArmourAndEvasionAndEnergyShield2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-abrasion",
+  "nameEn": "Lesser Essence of Abrasion",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "Adds (4-6) to (7-11) Physical Damage",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "LocalAddedPhysicalDamage2",
+    "modIds": [
+     "LocalAddedPhysicalDamage2"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "Adds (5-8) to (10-15) Physical Damage",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "LocalAddedPhysicalDamageTwoHand2",
+    "modIds": [
+     "LocalAddedPhysicalDamageTwoHand2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-flames",
+  "nameEn": "Lesser Essence of Flames",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "Adds (4-6) to (7-10) Fire Damage",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "LocalAddedFireDamage2",
+    "modIds": [
+     "LocalAddedFireDamage2"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "Adds (6-9) to (10-16) Fire Damage",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "LocalAddedFireDamageTwoHand2",
+    "modIds": [
+     "LocalAddedFireDamageTwoHand2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-ice",
+  "nameEn": "Lesser Essence of Ice",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "Adds (3-5) to (6-9) Cold Damage",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "LocalAddedColdDamage2",
+    "modIds": [
+     "LocalAddedColdDamage2"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "Adds (5-8) to (9-14) Cold Damage",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "LocalAddedColdDamageTwoHand2",
+    "modIds": [
+     "LocalAddedColdDamageTwoHand2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-electricity",
+  "nameEn": "Lesser Essence of Electricity",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "Adds 1 to (13-19) Lightning Damage",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "LocalAddedLightningDamage2",
+    "modIds": [
+     "LocalAddedLightningDamage2"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "Adds (1-2) to (19-27) Lightning Damage",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "LocalAddedLightningDamageTwoHand2",
+    "modIds": [
+     "LocalAddedLightningDamageTwoHand2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-ruin",
+  "nameEn": "Lesser Essence of Ruin",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Armour, Belt or Jewellery",
+    "text": "+(4-7)% to Chaos Resistance",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Focus",
+     "Belt",
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "ChaosResist1",
+    "modIds": [
+     "ChaosResist1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-battle",
+  "nameEn": "Lesser Essence of Battle",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Martial Weapon",
+    "text": "+(61-84) to Accuracy Rating",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Bow",
+     "Crossbow",
+     "Talisman"
+    ],
+    "modId": "LocalIncreasedAccuracy3",
+    "modIds": [
+     "LocalIncreasedAccuracy3"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-sorcery",
+  "nameEn": "Lesser Essence of Sorcery",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Focus or Wand",
+    "text": "(35-44)% increased Spell Damage",
+    "itemClasses": [
+     "Focus",
+     "Wand"
+    ],
+    "modId": "SpellDamageOnWeapon2",
+    "modIds": [
+     "SpellDamageOnWeapon2"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Staff",
+    "text": "(69-88)% increased Spell Damage",
+    "itemClasses": [
+     "Staff"
+    ],
+    "modId": "SpellDamageOnTwoHandWeapon2",
+    "modIds": [
+     "SpellDamageOnTwoHandWeapon2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-haste",
+  "nameEn": "Lesser Essence of Haste",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Melee Weapon",
+    "text": "(11-13)% increased Attack Speed",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe"
+    ],
+    "modId": "LocalIncreasedAttackSpeed3",
+    "modIds": [
+     "LocalIncreasedAttackSpeed3"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Bow or Crossbow",
+    "text": "(8-10)% increased Attack Speed",
+    "itemClasses": [
+     "Bow",
+     "Crossbow"
+    ],
+    "modId": "LocalIncreasedAttackSpeed2",
+    "modIds": [
+     "LocalIncreasedAttackSpeed2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-the-infinite",
+  "nameEn": "Lesser Essence of the Infinite",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Equipment",
+    "text": "+(9-12) to Strength, Dexterity or Intelligence",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Focus",
+     "Amulet",
+     "Ring",
+     "Belt",
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Wand",
+     "Staff",
+     "Sceptre",
+     "Bow",
+     "Crossbow",
+     "Talisman",
+     "Quiver"
+    ],
+    "modId": null,
+    "modIds": [
+     "Strength2",
+     "Dexterity2",
+     "Intelligence2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-the-body",
+  "nameEn": "Essence of the Body",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Belt, Body Armour, Helmet or Shield",
+    "text": "+(85-99) to maximum Life",
+    "itemClasses": [
+     "Belt",
+     "Body Armour",
+     "Helmet",
+     "Shield",
+     "Buckler"
+    ],
+    "modId": "IncreasedLife7",
+    "modIds": [
+     "IncreasedLife7"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Amulet, Boots, Gloves or Ring",
+    "text": "+(70-84) to maximum Life",
+    "itemClasses": [
+     "Amulet",
+     "Boots",
+     "Gloves",
+     "Ring"
+    ],
+    "modId": "IncreasedLife6",
+    "modIds": [
+     "IncreasedLife6"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-the-mind",
+  "nameEn": "Essence of the Mind",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Belt, Boots, Gloves or Helmet",
+    "text": "+(65-79) to maximum Mana",
+    "itemClasses": [
+     "Belt",
+     "Boots",
+     "Gloves",
+     "Helmet"
+    ],
+    "modId": "IncreasedMana6",
+    "modIds": [
+     "IncreasedMana6"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Jewellery",
+    "text": "+(80-89) to maximum Mana",
+    "itemClasses": [
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "IncreasedMana7",
+    "modIds": [
+     "IncreasedMana7"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-enhancement",
+  "nameEn": "Essence of Enhancement",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Armour",
+    "text": "(56-67)% increased Armour, Evasion and Energy Shield",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots"
+    ],
+    "modId": "LocalIncreasedArmourAndEvasionAndEnergyShield4",
+    "modIds": [
+     "LocalIncreasedArmourAndEvasionAndEnergyShield4"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-abrasion",
+  "nameEn": "Essence of Abrasion",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "Adds (10-15) to (18-26) Physical Damage",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "LocalAddedPhysicalDamage5",
+    "modIds": [
+     "LocalAddedPhysicalDamage5"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "Adds (14-21) to (25-37) Physical Damage",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "LocalAddedPhysicalDamageTwoHand5",
+    "modIds": [
+     "LocalAddedPhysicalDamageTwoHand5"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-flames",
+  "nameEn": "Essence of Flames",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "Adds (20-24) to (32-37) Fire Damage",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "LocalAddedFireDamage5",
+    "modIds": [
+     "LocalAddedFireDamage5"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "Adds (30-37) to (45-56) Fire Damage",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "LocalAddedFireDamageTwoHand5",
+    "modIds": [
+     "LocalAddedFireDamageTwoHand5"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-ice",
+  "nameEn": "Essence of Ice",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "Adds (17-20) to (26-32) Cold Damage",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "LocalAddedColdDamage5",
+    "modIds": [
+     "LocalAddedColdDamage5"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "Adds (25-30) to (38-46) Cold Damage",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "LocalAddedColdDamageTwoHand5",
+    "modIds": [
+     "LocalAddedColdDamageTwoHand5"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-electricity",
+  "nameEn": "Essence of Electricity",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "Adds (1-3) to (55-60) Lightning Damage",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "LocalAddedLightningDamage5",
+    "modIds": [
+     "LocalAddedLightningDamage5"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "Adds (1-4) to (80-88) Lightning Damage",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "LocalAddedLightningDamageTwoHand5",
+    "modIds": [
+     "LocalAddedLightningDamageTwoHand5"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-ruin",
+  "nameEn": "Essence of Ruin",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Armour, Belt or Jewellery",
+    "text": "+(8-11)% to Chaos Resistance",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Focus",
+     "Belt",
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "ChaosResist2",
+    "modIds": [
+     "ChaosResist2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-battle",
+  "nameEn": "Essence of Battle",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Martial Weapon",
+    "text": "+(124-167) to Accuracy Rating",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Bow",
+     "Crossbow",
+     "Talisman"
+    ],
+    "modId": "LocalIncreasedAccuracy5",
+    "modIds": [
+     "LocalIncreasedAccuracy5"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-sorcery",
+  "nameEn": "Essence of Sorcery",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Focus or Wand",
+    "text": "(55-64)% increased Spell Damage",
+    "itemClasses": [
+     "Focus",
+     "Wand"
+    ],
+    "modId": "SpellDamageOnWeapon4",
+    "modIds": [
+     "SpellDamageOnWeapon4"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Staff",
+    "text": "(109-128)% increased Spell Damage",
+    "itemClasses": [
+     "Staff"
+    ],
+    "modId": "SpellDamageOnTwoHandWeapon4",
+    "modIds": [
+     "SpellDamageOnTwoHandWeapon4"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-haste",
+  "nameEn": "Essence of Haste",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Melee Weapon",
+    "text": "(17-19)% increased Attack Speed",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe"
+    ],
+    "modId": "LocalIncreasedAttackSpeed5",
+    "modIds": [
+     "LocalIncreasedAttackSpeed5"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Bow or Crossbow",
+    "text": "(11-13)% increased Attack Speed",
+    "itemClasses": [
+     "Bow",
+     "Crossbow"
+    ],
+    "modId": "LocalIncreasedAttackSpeed3",
+    "modIds": [
+     "LocalIncreasedAttackSpeed3"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-the-infinite",
+  "nameEn": "Essence of the Infinite",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Equipment",
+    "text": "+(17-20) to Strength, Dexterity or Intelligence",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Focus",
+     "Amulet",
+     "Ring",
+     "Belt",
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Wand",
+     "Staff",
+     "Sceptre",
+     "Bow",
+     "Crossbow",
+     "Talisman",
+     "Quiver"
+    ],
+    "modId": null,
+    "modIds": [
+     "Strength4",
+     "Dexterity4",
+     "Intelligence4"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-the-body",
+  "nameEn": "Greater Essence of the Body",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Belt, Body Armour, Helmet or Shield",
+    "text": "+(100-119) to maximum Life",
+    "itemClasses": [
+     "Belt",
+     "Body Armour",
+     "Helmet",
+     "Shield",
+     "Buckler"
+    ],
+    "modId": "IncreasedLife8",
+    "modIds": [
+     "IncreasedLife8"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Amulet, Boots or Gloves",
+    "text": "+(85-99) to maximum Life",
+    "itemClasses": [
+     "Amulet",
+     "Boots",
+     "Gloves"
+    ],
+    "modId": "IncreasedLife7",
+    "modIds": [
+     "IncreasedLife7"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-the-mind",
+  "nameEn": "Greater Essence of the Mind",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Belt, Boots, Gloves or Helmet",
+    "text": "+(80-89) to maximum Mana",
+    "itemClasses": [
+     "Belt",
+     "Boots",
+     "Gloves",
+     "Helmet"
+    ],
+    "modId": "IncreasedMana7",
+    "modIds": [
+     "IncreasedMana7"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Jewellery",
+    "text": "+(90-104) to maximum Mana",
+    "itemClasses": [
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "IncreasedMana8",
+    "modIds": [
+     "IncreasedMana8"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-enhancement",
+  "nameEn": "Greater Essence of Enhancement",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Armour",
+    "text": "(68-79)% increased Armour, Evasion and Energy Shield",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots"
+    ],
+    "modId": "LocalIncreasedArmourAndEvasionAndEnergyShield5",
+    "modIds": [
+     "LocalIncreasedArmourAndEvasionAndEnergyShield5"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-abrasion",
+  "nameEn": "Greater Essence of Abrasion",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "Adds (16-24) to (28-42) Physical Damage",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "LocalAddedPhysicalDamage7",
+    "modIds": [
+     "LocalAddedPhysicalDamage7"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "Adds (23-35) to (39-59) Physical Damage",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "LocalAddedPhysicalDamageTwoHand7",
+    "modIds": [
+     "LocalAddedPhysicalDamageTwoHand7"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-flames",
+  "nameEn": "Greater Essence of Flames",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "Adds (35-44) to (56-71) Fire Damage",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "LocalAddedFireDamage7",
+    "modIds": [
+     "LocalAddedFireDamage7"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "Adds (56-70) to (84-107) Fire Damage",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "LocalAddedFireDamageTwoHand7",
+    "modIds": [
+     "LocalAddedFireDamageTwoHand7"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-ice",
+  "nameEn": "Greater Essence of Ice",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "Adds (31-38) to (47-59) Cold Damage",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "LocalAddedColdDamage7",
+    "modIds": [
+     "LocalAddedColdDamage7"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "Adds (46-57) to (70-88) Cold Damage",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "LocalAddedColdDamageTwoHand7",
+    "modIds": [
+     "LocalAddedColdDamageTwoHand7"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-electricity",
+  "nameEn": "Greater Essence of Electricity",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "Adds (1-6) to (85-107) Lightning Damage",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "LocalAddedLightningDamage7",
+    "modIds": [
+     "LocalAddedLightningDamage7"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "Adds (1-8) to (128-162) Lightning Damage",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "LocalAddedLightningDamageTwoHand7",
+    "modIds": [
+     "LocalAddedLightningDamageTwoHand7"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-ruin",
+  "nameEn": "Greater Essence of Ruin",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Armour, Belt or Jewellery",
+    "text": "+(16-19)% to Chaos Resistance",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Focus",
+     "Belt",
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "ChaosResist4",
+    "modIds": [
+     "ChaosResist4"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-battle",
+  "nameEn": "Greater Essence of Battle",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Martial Weapon, Gloves or Quiver",
+    "text": "+(237-346) to Accuracy Rating",
+    "itemClasses": [
+     "Gloves",
+     "Quiver"
+    ],
+    "modId": "IncreasedAccuracy7",
+    "modIds": [
+     "IncreasedAccuracy7"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-sorcery",
+  "nameEn": "Greater Essence of Sorcery",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Focus or Wand",
+    "text": "(75-89)% increased Spell Damage",
+    "itemClasses": [
+     "Focus",
+     "Wand"
+    ],
+    "modId": "SpellDamageOnWeapon6",
+    "modIds": [
+     "SpellDamageOnWeapon6"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Staff",
+    "text": "(149-188)% increased Spell Damage",
+    "itemClasses": [
+     "Staff"
+    ],
+    "modId": "SpellDamageOnTwoHandWeapon6",
+    "modIds": [
+     "SpellDamageOnTwoHandWeapon6"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-haste",
+  "nameEn": "Greater Essence of Haste",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Melee Weapon",
+    "text": "(23-25)% increased Attack Speed",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe"
+    ],
+    "modId": "LocalIncreasedAttackSpeed7",
+    "modIds": [
+     "LocalIncreasedAttackSpeed7"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Bow or Crossbow",
+    "text": "(14-16)% increased Attack Speed",
+    "itemClasses": [
+     "Bow",
+     "Crossbow"
+    ],
+    "modId": "LocalIncreasedAttackSpeed4",
+    "modIds": [
+     "LocalIncreasedAttackSpeed4"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-the-infinite",
+  "nameEn": "Greater Essence of the Infinite",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Equipment",
+    "text": "+(25-27) to Strength, Dexterity or Intelligence",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Focus",
+     "Amulet",
+     "Ring",
+     "Belt",
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Wand",
+     "Staff",
+     "Sceptre",
+     "Bow",
+     "Crossbow",
+     "Talisman",
+     "Quiver"
+    ],
+    "modId": null,
+    "modIds": [
+     "Strength6",
+     "Dexterity6",
+     "Intelligence6"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-the-body",
+  "nameEn": "Perfect Essence of the Body",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Body Armour",
+    "text": "(8-10)% increased maximum Life",
+    "itemClasses": [
+     "Body Armour"
+    ],
+    "modId": "EssenceIncreasedLifePercent1",
+    "modIds": [
+     "EssenceIncreasedLifePercent1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-the-mind",
+  "nameEn": "Perfect Essence of the Mind",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Ring",
+    "text": "(4-6)% increased maximum Mana",
+    "itemClasses": [
+     "Ring"
+    ],
+    "modId": "EssenceIncreasedManaPercent1",
+    "modIds": [
+     "EssenceIncreasedManaPercent1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-enhancement",
+  "nameEn": "Perfect Essence of Enhancement",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Amulet",
+    "text": "(20-30)% increased Global Armour, Evasion and Energy Shield",
+    "itemClasses": [
+     "Amulet"
+    ],
+    "modId": "EssenceGlobalDefences1",
+    "modIds": [
+     "EssenceGlobalDefences1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-abrasion",
+  "nameEn": "Perfect Essence of Abrasion",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "Gain (15-20)% of Damage as Extra Physical Damage",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "EssenceDamageasExtraPhysical1",
+    "modIds": [
+     "EssenceDamageasExtraPhysical1"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "Gain (25-33)% of Damage as Extra Physical Damage",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "EssenceDamageasExtraPhysical2H",
+    "modIds": [
+     "EssenceDamageasExtraPhysical2H"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-flames",
+  "nameEn": "Perfect Essence of Flames",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "Gain (15-20)% of Damage as Extra Fire Damage",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "EssenceDamageasExtraFire1",
+    "modIds": [
+     "EssenceDamageasExtraFire1"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "Gain (25-33)% of Damage as Extra Fire Damage",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "EssenceDamageasExtraFire2H",
+    "modIds": [
+     "EssenceDamageasExtraFire2H"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-ice",
+  "nameEn": "Perfect Essence of Ice",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "Gain (15-20)% of Damage as Extra Cold Damage",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "EssenceDamageasExtraCold1",
+    "modIds": [
+     "EssenceDamageasExtraCold1"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "Gain (25-33)% of Damage as Extra Cold Damage",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "EssenceDamageasExtraCold2H",
+    "modIds": [
+     "EssenceDamageasExtraCold2H"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-electricity",
+  "nameEn": "Perfect Essence of Electricity",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "Gain (15-20)% of Damage as Extra Lightning Damage",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "EssenceDamageasExtraLightning1",
+    "modIds": [
+     "EssenceDamageasExtraLightning1"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "Gain (25-33)% of Damage as Extra Lightning Damage",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "EssenceDamageasExtraLightning2H",
+    "modIds": [
+     "EssenceDamageasExtraLightning2H"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-ruin",
+  "nameEn": "Perfect Essence of Ruin",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Body Armour",
+    "text": "(10-15)% of Physical Damage from Hits taken as Chaos Damage",
+    "itemClasses": [
+     "Body Armour"
+    ],
+    "modId": "EssencePhysicalDamageTakenAsChaos1",
+    "modIds": [
+     "EssencePhysicalDamageTakenAsChaos1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-battle",
+  "nameEn": "Perfect Essence of Battle",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "One Handed Melee Weapon or Bow",
+    "text": "+2 to Level of all Attack Skills",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Bow"
+    ],
+    "modId": "EssenceAttackSkillLevel1H1",
+    "modIds": [
+     "EssenceAttackSkillLevel1H1"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Two Handed Melee Weapon or Crossbow",
+    "text": "+3 to Level of all Attack Skills",
+    "itemClasses": [
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Crossbow"
+    ],
+    "modId": "EssenceAttackSkillLevel2H1",
+    "modIds": [
+     "EssenceAttackSkillLevel2H1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-sorcery",
+  "nameEn": "Perfect Essence of Sorcery",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Wand",
+    "text": "+3 to Level of all Spell Skills",
+    "itemClasses": [
+     "Wand"
+    ],
+    "modId": "GlobalSpellGemsLevelWeapon3",
+    "modIds": [
+     "GlobalSpellGemsLevelWeapon3"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Staff",
+    "text": "+5 to Level of all Spell Skills",
+    "itemClasses": [
+     "Staff"
+    ],
+    "modId": "EssenceSpellSkillLevel2H1",
+    "modIds": [
+     "EssenceSpellSkillLevel2H1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-haste",
+  "nameEn": "Perfect Essence of Haste",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Martial Weapon",
+    "text": "(20-25)% chance to gain Onslaught on Killing Hits with this Weapon",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Bow",
+     "Crossbow",
+     "Talisman"
+    ],
+    "modId": "EssenceOnslaughtonKill1",
+    "modIds": [
+     "EssenceOnslaughtonKill1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-the-infinite",
+  "nameEn": "Perfect Essence of the Infinite",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Amulet",
+    "text": "(7-10)% increased Strength, Dexterity or Intelligence",
+    "itemClasses": [
+     "Amulet"
+    ],
+    "modId": null,
+    "modIds": [
+     "EssencePercentStrength1",
+     "EssencePercentDexterity1",
+     "EssencePercentIntelligence1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-seeking",
+  "nameEn": "Lesser Essence of Seeking",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Martial Weapon",
+    "text": "+(1.51-2.1)% to Critical Hit Chance",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Bow",
+     "Crossbow",
+     "Talisman"
+    ],
+    "modId": "LocalCriticalStrikeChance2",
+    "modIds": [
+     "LocalCriticalStrikeChance2"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Focus or Wand",
+    "text": "(34-39)% increased Critical Hit Chance for Spells",
+    "itemClasses": [
+     "Focus",
+     "Wand"
+    ],
+    "modId": "SpellCriticalStrikeChance2",
+    "modIds": [
+     "SpellCriticalStrikeChance2"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Staff",
+    "text": "(50-59)% increased Critical Hit Chance for Spells",
+    "itemClasses": [
+     "Staff"
+    ],
+    "modId": "SpellCriticalStrikeChanceTwoHand2",
+    "modIds": [
+     "SpellCriticalStrikeChanceTwoHand2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-seeking",
+  "nameEn": "Essence of Seeking",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Martial Weapon",
+    "text": "+(2.11-2.7)% to Critical Hit Chance",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Bow",
+     "Crossbow",
+     "Talisman"
+    ],
+    "modId": "LocalCriticalStrikeChance3",
+    "modIds": [
+     "LocalCriticalStrikeChance3"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Focus or Wand",
+    "text": "(40-46)% increased Critical Hit Chance for Spells",
+    "itemClasses": [
+     "Focus",
+     "Wand"
+    ],
+    "modId": "SpellCriticalStrikeChance3",
+    "modIds": [
+     "SpellCriticalStrikeChance3"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Staff",
+    "text": "(60-69)% increased Critical Hit Chance for Spells",
+    "itemClasses": [
+     "Staff"
+    ],
+    "modId": "SpellCriticalStrikeChanceTwoHand3",
+    "modIds": [
+     "SpellCriticalStrikeChanceTwoHand3"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-seeking",
+  "nameEn": "Greater Essence of Seeking",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Martial Weapon",
+    "text": "+(3.11-3.8)% to Critical Hit Chance",
+    "itemClasses": [
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Bow",
+     "Crossbow",
+     "Talisman"
+    ],
+    "modId": "LocalCriticalStrikeChance4",
+    "modIds": [
+     "LocalCriticalStrikeChance4"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Focus or Wand",
+    "text": "(47-53)% increased Critical Hit Chance for Spells",
+    "itemClasses": [
+     "Focus",
+     "Wand"
+    ],
+    "modId": "SpellCriticalStrikeChance4",
+    "modIds": [
+     "SpellCriticalStrikeChance4"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Staff",
+    "text": "(70-79)% increased Critical Hit Chance for Spells",
+    "itemClasses": [
+     "Staff"
+    ],
+    "modId": "SpellCriticalStrikeChanceTwoHand4",
+    "modIds": [
+     "SpellCriticalStrikeChanceTwoHand4"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-seeking",
+  "nameEn": "Perfect Essence of Seeking",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Body Armour",
+    "text": "Hits against you have (40-50)% reduced Critical Damage Bonus",
+    "itemClasses": [
+     "Body Armour"
+    ],
+    "modId": "EssenceReducedCriticalDamageAgainstYou1",
+    "modIds": [
+     "EssenceReducedCriticalDamageAgainstYou1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-hysteria",
+  "nameEn": "Essence of Hysteria",
+  "tier": "special",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Helmet",
+    "text": "+1 to Level of all Minion Skills",
+    "itemClasses": [
+     "Helmet"
+    ],
+    "modId": "GlobalMinionSpellSkillGemLevel1",
+    "modIds": [
+     "GlobalMinionSpellSkillGemLevel1"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Body Armour",
+    "text": "(64-97) to (98-145) Physical Thorns damage",
+    "itemClasses": [
+     "Body Armour"
+    ],
+    "modId": "AttackerTakesDamage6",
+    "modIds": [
+     "AttackerTakesDamage6"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Gloves",
+    "text": "(25-29)% increased Critical Damage Bonus",
+    "itemClasses": [
+     "Gloves"
+    ],
+    "modId": "CriticalMultiplier4",
+    "modIds": [
+     "CriticalMultiplier4"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Boots",
+    "text": "30% increased Movement Speed",
+    "itemClasses": [
+     "Boots"
+    ],
+    "modId": "MovementVelocity5",
+    "modIds": [
+     "MovementVelocity5"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Ring",
+    "text": "(50-59)% increased Mana Regeneration Rate",
+    "itemClasses": [
+     "Ring"
+    ],
+    "modId": "ManaRegeneration5",
+    "modIds": [
+     "ManaRegeneration5"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Amulet",
+    "text": "(19-21)% of Damage taken Recouped as Life",
+    "itemClasses": [
+     "Amulet"
+    ],
+    "modId": "DamageTakenGainedAsLife4_",
+    "modIds": [
+     "DamageTakenGainedAsLife4_"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Belt",
+    "text": "+(254-304) to Stun Threshold",
+    "itemClasses": [
+     "Belt"
+    ],
+    "modId": "StunThreshold10",
+    "modIds": [
+     "StunThreshold10"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Shield",
+    "text": "(20-24)% increased Block chance",
+    "itemClasses": [
+     "Shield",
+     "Buckler"
+    ],
+    "modId": "LocalBlockChance2",
+    "modIds": [
+     "LocalBlockChance2"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Quiver",
+    "text": "(43-50)% increased Damage with Bow Skills",
+    "itemClasses": [
+     "Quiver"
+    ],
+    "modId": "DamageWithBows5",
+    "modIds": [
+     "DamageWithBows5"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Focus",
+    "text": "(20-23)% increased Energy Shield Recharge Rate",
+    "itemClasses": [
+     "Focus"
+    ],
+    "modId": "EnergyShieldRechargeRate5______",
+    "modIds": [
+     "EnergyShieldRechargeRate5______"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-delirium",
+  "nameEn": "Essence of Delirium",
+  "tier": "special",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Body Armour",
+    "text": "Allocates a random Notable Passive Skill",
+    "itemClasses": [
+     "Body Armour"
+    ],
+    "modId": null,
+    "modIds": [],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-horror",
+  "nameEn": "Essence of Horror",
+  "tier": "special",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Gloves or Boots",
+    "text": "60% increased effect of Socketed Augment Items",
+    "itemClasses": [
+     "Gloves",
+     "Boots"
+    ],
+    "modId": "EssenceLocalRuneAndSoulCoreEffect1",
+    "modIds": [
+     "EssenceLocalRuneAndSoulCoreEffect1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-insanity",
+  "nameEn": "Essence of Insanity",
+  "tier": "special",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Belt",
+    "text": "On Corruption, Item gains two Enchantments",
+    "itemClasses": [
+     "Belt"
+    ],
+    "modId": null,
+    "modIds": [],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-the-abyss",
+  "nameEn": "Essence of the Abyss",
+  "tier": "special",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Equipment",
+    "text": "Mark of the Abyssal Lord",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Focus",
+     "Amulet",
+     "Ring",
+     "Belt",
+     "One Hand Mace",
+     "Spear",
+     "One Hand Sword",
+     "One Hand Axe",
+     "Dagger",
+     "Claw",
+     "Flail",
+     "Two Hand Mace",
+     "Warstaff",
+     "Two Hand Sword",
+     "Two Hand Axe",
+     "Wand",
+     "Staff",
+     "Sceptre",
+     "Bow",
+     "Crossbow",
+     "Talisman",
+     "Quiver"
+    ],
+    "modId": null,
+    "modIds": [],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-the-breach",
+  "nameEn": "Essence of the Breach",
+  "tier": "normal",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Jewellery",
+    "text": "+20% to Maximum Quality",
+    "itemClasses": [
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "EssenceBreach",
+    "modIds": [
+     "EssenceBreach"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-insulation",
+  "nameEn": "Lesser Essence of Insulation",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Armour, Belt or Jewellery",
+    "text": "+(11-15)% to Fire Resistance",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Focus",
+     "Belt",
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "FireResist2",
+    "modIds": [
+     "FireResist2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-insulation",
+  "nameEn": "Essence of Insulation",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Armour, Belt or Jewellery",
+    "text": "+(21-25)% to Fire Resistance",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Focus",
+     "Belt",
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "FireResist4",
+    "modIds": [
+     "FireResist4"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-insulation",
+  "nameEn": "Greater Essence of Insulation",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Armour, Belt or Jewellery",
+    "text": "+(31-35)% to Fire Resistance",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Focus",
+     "Belt",
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "FireResist6",
+    "modIds": [
+     "FireResist6"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-insulation",
+  "nameEn": "Perfect Essence of Insulation",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Belt",
+    "text": "(26-30)% of Fire Damage taken Recouped as Life",
+    "itemClasses": [
+     "Belt"
+    ],
+    "modId": "EssenceFireRecoupLife1",
+    "modIds": [
+     "EssenceFireRecoupLife1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-thawing",
+  "nameEn": "Lesser Essence of Thawing",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Armour, Belt or Jewellery",
+    "text": "+(11-15)% to Cold Resistance",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Focus",
+     "Belt",
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "ColdResist2",
+    "modIds": [
+     "ColdResist2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-thawing",
+  "nameEn": "Essence of Thawing",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Armour, Belt or Jewellery",
+    "text": "+(21-25)% to Cold Resistance",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Focus",
+     "Belt",
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "ColdResist4",
+    "modIds": [
+     "ColdResist4"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-thawing",
+  "nameEn": "Greater Essence of Thawing",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Armour, Belt or Jewellery",
+    "text": "+(31-35)% to Cold Resistance",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Focus",
+     "Belt",
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "ColdResist6",
+    "modIds": [
+     "ColdResist6"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-thawing",
+  "nameEn": "Perfect Essence of Thawing",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Helmet",
+    "text": "(26-30)% of Cold Damage taken Recouped as Life",
+    "itemClasses": [
+     "Helmet"
+    ],
+    "modId": "EssenceColdRecoupLife1",
+    "modIds": [
+     "EssenceColdRecoupLife1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-grounding",
+  "nameEn": "Lesser Essence of Grounding",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Armour, Belt or Jewellery",
+    "text": "+(11-15)% to Lightning Resistance",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Focus",
+     "Belt",
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "LightningResist2",
+    "modIds": [
+     "LightningResist2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-grounding",
+  "nameEn": "Essence of Grounding",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Armour, Belt or Jewellery",
+    "text": "+(21-25)% to Lightning Resistance",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Focus",
+     "Belt",
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "LightningResist4",
+    "modIds": [
+     "LightningResist4"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-grounding",
+  "nameEn": "Greater Essence of Grounding",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Armour, Belt or Jewellery",
+    "text": "+(31-35)% to Lightning Resistance",
+    "itemClasses": [
+     "Helmet",
+     "Body Armour",
+     "Gloves",
+     "Boots",
+     "Shield",
+     "Buckler",
+     "Focus",
+     "Belt",
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "LightningResist6",
+    "modIds": [
+     "LightningResist6"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-grounding",
+  "nameEn": "Perfect Essence of Grounding",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Gloves",
+    "text": "(26-30)% of Lightning Damage taken Recouped as Life",
+    "itemClasses": [
+     "Gloves"
+    ],
+    "modId": "EssenceLightningRecoupLife1",
+    "modIds": [
+     "EssenceLightningRecoupLife1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-alacrity",
+  "nameEn": "Lesser Essence of Alacrity",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Focus or Wand",
+    "text": "(13-16)% increased Cast Speed",
+    "itemClasses": [
+     "Focus",
+     "Wand"
+    ],
+    "modId": "IncreasedCastSpeed2",
+    "modIds": [
+     "IncreasedCastSpeed2"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Staff",
+    "text": "(20-25)% increased Cast Speed",
+    "itemClasses": [
+     "Staff"
+    ],
+    "modId": "IncreasedCastSpeedTwoHand2",
+    "modIds": [
+     "IncreasedCastSpeedTwoHand2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-alacrity",
+  "nameEn": "Essence of Alacrity",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Focus or Wand",
+    "text": "(17-20)% increased Cast Speed",
+    "itemClasses": [
+     "Focus",
+     "Wand"
+    ],
+    "modId": "IncreasedCastSpeed3",
+    "modIds": [
+     "IncreasedCastSpeed3"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Staff",
+    "text": "(26-31)% increased Cast Speed",
+    "itemClasses": [
+     "Staff"
+    ],
+    "modId": "IncreasedCastSpeedTwoHand3",
+    "modIds": [
+     "IncreasedCastSpeedTwoHand3"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-alacrity",
+  "nameEn": "Greater Essence of Alacrity",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Focus or Wand",
+    "text": "(25-28)% increased Cast Speed",
+    "itemClasses": [
+     "Focus",
+     "Wand"
+    ],
+    "modId": "IncreasedCastSpeed5",
+    "modIds": [
+     "IncreasedCastSpeed5"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Staff",
+    "text": "(38-43)% increased Cast Speed",
+    "itemClasses": [
+     "Staff"
+    ],
+    "modId": "IncreasedCastSpeedTwoHand5",
+    "modIds": [
+     "IncreasedCastSpeedTwoHand5"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-alacrity",
+  "nameEn": "Perfect Essence of Alacrity",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Focus or Wand",
+    "text": "(18-20)% increased Mana Cost Efficiency",
+    "itemClasses": [
+     "Focus",
+     "Wand"
+    ],
+    "modId": "EssenceManaCostReduction",
+    "modIds": [
+     "EssenceManaCostReduction"
+    ],
+    "unknownCategoryTerms": []
+   },
+   {
+    "category": "Staff",
+    "text": "(28-32)% increased Mana Cost Efficiency",
+    "itemClasses": [
+     "Staff"
+    ],
+    "modId": "EssenceManaCostReduction2H",
+    "modIds": [
+     "EssenceManaCostReduction2H"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-opulence",
+  "nameEn": "Lesser Essence of Opulence",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Boots, Gloves, Helmet or Jewellery",
+    "text": "(6-10)% increased Rarity of Items found",
+    "itemClasses": [
+     "Boots",
+     "Gloves",
+     "Helmet",
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "ItemFoundRarityIncrease1",
+    "modIds": [
+     "ItemFoundRarityIncrease1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-opulence",
+  "nameEn": "Essence of Opulence",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Boots, Gloves, Helmet or Jewellery",
+    "text": "(11-14)% increased Rarity of Items found",
+    "itemClasses": [
+     "Boots",
+     "Gloves",
+     "Helmet",
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "ItemFoundRarityIncrease2",
+    "modIds": [
+     "ItemFoundRarityIncrease2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-opulence",
+  "nameEn": "Greater Essence of Opulence",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Boots, Gloves, Helmet or Jewellery",
+    "text": "(15-18)% increased Rarity of Items found",
+    "itemClasses": [
+     "Boots",
+     "Gloves",
+     "Helmet",
+     "Amulet",
+     "Ring"
+    ],
+    "modId": "ItemFoundRarityIncrease3",
+    "modIds": [
+     "ItemFoundRarityIncrease3"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-opulence",
+  "nameEn": "Perfect Essence of Opulence",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Gloves",
+    "text": "(10-15)% increased Quantity of Gold Dropped by Slain Enemies",
+    "itemClasses": [
+     "Gloves"
+    ],
+    "modId": "EssenceGoldDropped1",
+    "modIds": [
+     "EssenceGoldDropped1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "lesser-essence-of-command",
+  "nameEn": "Lesser Essence of Command",
+  "tier": "lesser",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Sceptre",
+    "text": "Allies in your Presence deal (35-44)% increased Damage",
+    "itemClasses": [
+     "Sceptre"
+    ],
+    "modId": "NearbyAlliesAllDamage2",
+    "modIds": [
+     "NearbyAlliesAllDamage2"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "essence-of-command",
+  "nameEn": "Essence of Command",
+  "tier": "normal",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Sceptre",
+    "text": "Allies in your Presence deal (55-64)% increased Damage",
+    "itemClasses": [
+     "Sceptre"
+    ],
+    "modId": "NearbyAlliesAllDamage4",
+    "modIds": [
+     "NearbyAlliesAllDamage4"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "greater-essence-of-command",
+  "nameEn": "Greater Essence of Command",
+  "tier": "greater",
+  "mode": "magicToRare",
+  "effects": [
+   {
+    "category": "Sceptre",
+    "text": "Allies in your Presence deal (75-89)% increased Damage",
+    "itemClasses": [
+     "Sceptre"
+    ],
+    "modId": "NearbyAlliesAllDamage6",
+    "modIds": [
+     "NearbyAlliesAllDamage6"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ },
+ {
+  "id": "perfect-essence-of-command",
+  "nameEn": "Perfect Essence of Command",
+  "tier": "perfect",
+  "mode": "rareReplace",
+  "effects": [
+   {
+    "category": "Sceptre",
+    "text": "Aura Skills have (15-20)% increased Magnitudes",
+    "itemClasses": [
+     "Sceptre"
+    ],
+    "modId": "EssenceAuraEffect1",
+    "modIds": [
+     "EssenceAuraEffect1"
+    ],
+    "unknownCategoryTerms": []
+   }
+  ]
+ }
+]

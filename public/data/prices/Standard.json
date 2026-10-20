@@ -1,0 +1,552 @@
+{
+  "league": "Standard",
+  "unit": "exalted",
+  "source": "poe.ninja (API pública de economia PoE2)",
+  "fetchedAt": "2026-10-20T19:52:30.262Z",
+  "divineInExalted": 213.2,
+  "leagues": [
+    "Forbidden Rites",
+    "Runes of Aldur",
+    "HC Forbidden Rites",
+    "HC Runes of Aldur",
+    "Standard",
+    "Hardcore"
+  ],
+  "entries": {
+    "Orb of Alchemy": {
+      "value": 3.02744,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Exalted Orb": {
+      "value": 0.9999079999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Ancient Infuser": {
+      "value": 852.8,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Divine Orb": {
+      "value": 213.2,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Orb of Annulment": {
+      "value": 75.55807999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Architect's Orb": {
+      "value": 481.83199999999994,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Chaos Orb": {
+      "value": 111.11984,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Artificer's Orb": {
+      "value": 7.105955999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Fracturing Orb": {
+      "value": 6357.624,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Perfect Exalted Orb": {
+      "value": 138.77188,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Perfect Jeweller's Orb": {
+      "value": 124.53011999999998,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Regal Orb": {
+      "value": 2.3814439999999997,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Armourer's Scrap": {
+      "value": 11.312392000000001,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Cryptic Key": {
+      "value": 300.61199999999997,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Glassblower's Bauble": {
+      "value": 11.52346,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Orb of Chance": {
+      "value": 95.94,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Core Destabiliser": {
+      "value": 283.556,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Crystallised Corruption": {
+      "value": 1790.8799999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Arcanist's Etcher": {
+      "value": 3.9953679999999996,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Hinekora's Lock": {
+      "value": 1359150,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Kopec's Orb of Sacrifice": {
+      "value": 9807.199999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Perfect Chaos Orb": {
+      "value": 982.852,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Perfect Regal Orb": {
+      "value": 150.839,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Vaal Arcanist's Infuser": {
+      "value": 71.05955999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Vaal Blacksmith's Infuser": {
+      "value": 1172.6,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Orb of Augmentation": {
+      "value": 0.3716076,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Lesser Jeweller's Orb": {
+      "value": 0.9999079999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Gemcutter's Prism": {
+      "value": 20.430956,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Greater Chaos Orb": {
+      "value": 443.456,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Greater Exalted Orb": {
+      "value": 20.895732,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Greater Jeweller's Orb": {
+      "value": 53.3,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Greater Orb of Augmentation": {
+      "value": 0.8528,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Greater Orb of Transmutation": {
+      "value": 2.6330199999999997,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Kamasa's Orb of Sacrifice": {
+      "value": 12792,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Mirror of Kalandra": {
+      "value": 2141594,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Orb of Extraction": {
+      "value": 4971.824,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Perfect Orb of Augmentation": {
+      "value": 177.489,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Perfect Orb of Transmutation": {
+      "value": 6.877831999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Vaal Armourer's Infuser": {
+      "value": 127.53623999999998,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Vaal Catalysing Infuser": {
+      "value": 25562.68,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Vaal Orb": {
+      "value": 15.079635999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Vaal Cultivation Orb": {
+      "value": 207.35832,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Blacksmith's Whetstone": {
+      "value": 6.489807999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Scroll of Wisdom": {
+      "value": 0.2049918,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Essence of Delirium": {
+      "value": 1279.1999999999998,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Essence of the Breach": {
+      "value": 2174.64,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Greater Essence of Insulation": {
+      "value": 106.6,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Perfect Essence of Abrasion": {
+      "value": 213.2,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Perfect Essence of Battle": {
+      "value": 106.6,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Perfect Essence of Haste": {
+      "value": 746.1999999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Essence of Horror": {
+      "value": 1613.924,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Essence of Hysteria": {
+      "value": 1848.444,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Essence of Insanity": {
+      "value": 852.8,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Essence of the Abyss": {
+      "value": 213.2,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Greater Essence of Haste": {
+      "value": 0.9999079999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Greater Essence of Seeking": {
+      "value": 111.11984,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Greater Essence of the Infinite": {
+      "value": 111.11984,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Lesser Essence of Grounding": {
+      "value": 213.2,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Perfect Essence of the Mind": {
+      "value": 193.82012,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Refreshment": {
+      "value": 7.105955999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Sinistral Necromancy": {
+      "value": 12.182248,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "An Audience with the King": {
+      "value": 147.25724,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Abyssal Echoes": {
+      "value": 149.53848,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Answered Prayers": {
+      "value": 213.2,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Chance": {
+      "value": 18122,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Chaotic Quantity": {
+      "value": 178.36311999999998,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Dextral Annulment": {
+      "value": 24603.28,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Dextral Crystallisation": {
+      "value": 396.552,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Dextral Erasure": {
+      "value": 19019.571999999996,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Greater Exaltation": {
+      "value": 107.36752,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Light": {
+      "value": 23707.84,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Reinforcements": {
+      "value": 426.4,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Secret Compartments": {
+      "value": 6353.36,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Sinistral Annulment": {
+      "value": 37928.28,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Sinistral Crystallisation": {
+      "value": 413.60799999999995,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Sinistral Exaltation": {
+      "value": 283.556,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of the Hunt": {
+      "value": 7391.644,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Head of the King": {
+      "value": 6214.78,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Amelioration": {
+      "value": 195.44043999999997,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Bartering": {
+      "value": 134.08148,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Catalysing Exaltation": {
+      "value": 42.64,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Chaotic Effectiveness": {
+      "value": 326.19599999999997,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Chaotic Monsters": {
+      "value": 161.52032,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Chaotic Rarity": {
+      "value": 77.88195999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Dextral Exaltation": {
+      "value": 272.896,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Dextral Necromancy": {
+      "value": 21.32,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Putrefaction": {
+      "value": 2.0000292,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Resurgence": {
+      "value": 31.979999999999997,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Sanctification": {
+      "value": 3116.9839999999995,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Sinistral Erasure": {
+      "value": 27716,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of the Ancients": {
+      "value": 161.41371999999998,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of the Blessed": {
+      "value": 1628.848,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of the Liege": {
+      "value": 0.16665844,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of the Sovereign": {
+      "value": 4.023084,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Omen of Whittling": {
+      "value": 20842.432,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Altered Collarbone": {
+      "value": 22279.399999999998,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Amanamu's Gaze": {
+      "value": 5756.4,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Ancient Rib": {
+      "value": 3507.14,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Ancient Collarbone": {
+      "value": 11387.011999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Ancient Jawbone": {
+      "value": 2984.7999999999997,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Preserved Cranium": {
+      "value": 6182.799999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Tecrod's Gaze": {
+      "value": 8918.155999999999,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Kurgal's Gaze": {
+      "value": 14391,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Preserved Collarbone": {
+      "value": 135.19011999999998,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Preserved Rib": {
+      "value": 21.32,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Preserved Vertebrae": {
+      "value": 193.13788,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    },
+    "Ulaman's Gaze": {
+      "value": 3198,
+      "source": "poe.ninja",
+      "updatedAt": "2026-10-20T19:52:30.262Z"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "_comment": "Lista CURADA. Os arquivos do cliente marcam bases de classes ainda não lançadas como release_state=released (a GGG envia os dados antes do lançamento). Atualize esta lista quando uma classe for lançada e rode `npm run data:import`.",
+  "gameVersion": "0.5",
+  "reviewedAt": "2026-10-20",
+  "source": "Lista mantida manualmente (classes de arma ainda não disponíveis no PoE2)",
+  "unreleasedClasses": ["Dagger", "Claw", "One Hand Sword", "Two Hand Sword", "One Hand Axe", "Two Hand Axe", "Flail"],
+  "excludedTags": ["not_for_sale", "demigods"],
+  "excludedIdPatterns": ["Demigod", "Ascendancy", "Base$", "BaseVerisium", "VerisiumUnique"],
+  "_excludedIdPatterns": "Bases que não são obtidas normalmente: peças Demigod, bases concedidas por ascendência, bases genéricas de exemplo (…Base) e bases exclusivas de únicos."
+}

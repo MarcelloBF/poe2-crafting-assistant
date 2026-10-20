@@ -1,0 +1,29 @@
+# Gera o instalador e a versão portátil para Windows e anexa à Release quando uma tag vX.Y.Z é enviada.
+name: Executável (Windows)
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Atualizar preços (poe.ninja)
+        run: npm run prices:update
+        continue-on-error: true
+      - run: npm test
+      - run: npm run build
+      - run: npx electron-builder --win --publish always
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
