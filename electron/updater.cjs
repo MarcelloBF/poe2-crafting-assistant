@@ -43,6 +43,7 @@ function setupAutoUpdate() {
   autoUpdater.logger = logger();
   autoUpdater.autoDownload = true;
   autoUpdater.autoInstallOnAppQuit = true;
+  autoUpdater.disableWebInstaller = true;
   let prompted = false;
 
   autoUpdater.on('update-downloaded', async (info) => {
@@ -51,7 +52,8 @@ function setupAutoUpdate() {
     const win = BrowserWindow.getAllWindows()[0];
     const opts = { type: 'info', title: t.title, message: t.message(info.version), detail: t.detail, buttons: [t.now, t.later], defaultId: 0, cancelId: 1 };
     const { response } = win ? await dialog.showMessageBox(win, opts) : await dialog.showMessageBox(opts);
-    if (response === 0) setImmediate(() => autoUpdater.quitAndInstall(false, true));
+    // Silencioso: sem isso o instalador abria o assistente completo (Avançar/Instalar) a cada atualização.
+    if (response === 0) setImmediate(() => autoUpdater.quitAndInstall(true, true));
   });
   autoUpdater.on('error', (e) => autoUpdater.logger.error(e?.stack ?? e));
 
