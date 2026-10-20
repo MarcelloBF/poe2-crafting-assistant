@@ -12,7 +12,7 @@ Interface em português brasileiro (padrão) e inglês, tema escuro, responsiva 
 - **Executável para Windows:** baixe `POE2-Crafting-Assistant-Setup-x.y.z.exe` em
   [Releases](https://github.com/MarcelloBF/poe2-crafting-assistant/releases/latest) e instale
   (atalho no menu Iniciar e na área de trabalho). **Só é preciso baixar uma vez:** o app procura versões novas
-  ao abrir (e a cada 4 h aberto), baixa sozinho e oferece reiniciar; se você escolher "Depois", instala ao fechar.
+  ao abrir, a cada hora e quando você volta para a janela dele, baixa sozinho e oferece reiniciar; se você escolher "Depois", instala ao fechar.
 
   O executável não tem certificado digital pago, então o Windows pode mostrar "O Windows protegeu o computador".
   Clique em **Mais informações → Executar assim mesmo**.

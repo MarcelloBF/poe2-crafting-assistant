@@ -4,7 +4,9 @@ const { app, dialog, BrowserWindow } = require('electron');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const CHECK_EVERY_MS = 4 * 60 * 60 * 1000;
+const CHECK_EVERY_MS = 60 * 60 * 1000;
+/** Ao voltar para a janela, verifica de novo se a última verificação tem mais que isso. */
+const CHECK_ON_FOCUS_AFTER_MS = 15 * 60 * 1000;
 
 const TEXT = {
   pt: {
@@ -57,9 +59,17 @@ function setupAutoUpdate() {
   });
   autoUpdater.on('error', (e) => autoUpdater.logger.error(e?.stack ?? e));
 
-  const check = () => autoUpdater.checkForUpdates().catch((e) => autoUpdater.logger.error(e?.stack ?? e));
+  // O app costuma ficar aberto horas ao lado do jogo: sem isso, uma correção publicada só chegava no dia seguinte.
+  let lastCheck = 0;
+  const check = () => {
+    lastCheck = Date.now();
+    autoUpdater.checkForUpdates().catch((e) => autoUpdater.logger.error(e?.stack ?? e));
+  };
   check();
   setInterval(check, CHECK_EVERY_MS);
+  app.on('browser-window-focus', () => {
+    if (!prompted && Date.now() - lastCheck > CHECK_ON_FOCUS_AFTER_MS) check();
+  });
 }
 
 module.exports = { setupAutoUpdate };
