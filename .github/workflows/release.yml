@@ -1,4 +1,5 @@
-# Gera o instalador e a versão portátil para Windows e anexa à Release quando uma tag vX.Y.Z é enviada.
+# Gera o instalador para Windows e anexa à Release quando uma tag vX.Y.Z é enviada.
+# O latest.yml anexado é o que os apps instalados consultam para se atualizar sozinhos.
 name: Executável (Windows)
 
 on:
@@ -23,7 +24,7 @@ jobs:
         continue-on-error: true
       - run: npm test
       - run: npm run build
-      # Gera sem publicar: o electron-builder publicando os dois alvos em paralelo criava Releases duplicadas.
+      # Gera sem publicar e cria a Release com o gh (o publish do electron-builder já criou Releases duplicadas).
       - run: npx electron-builder --win --publish never
       - name: Publicar Release
         shell: bash

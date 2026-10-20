@@ -1,7 +1,7 @@
 {
   "name": "poe2-crafting-assistant",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "description": "POE2 Crafting Assistant - planejamento, cálculo e tutorial de crafting para Path of Exile 2",
   "license": "MIT",
@@ -53,26 +53,27 @@
     },
     "publish": {
       "provider": "github",
+      "owner": "MarcelloBF",
+      "repo": "poe2-crafting-assistant",
       "releaseType": "release"
     },
     "win": {
       "target": [
-        "nsis",
-        "portable"
+        "nsis"
       ]
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "artifactName": "POE2-Crafting-Assistant-Setup-${version}.${ext}"
-    },
-    "portable": {
-      "artifactName": "POE2-Crafting-Assistant-Portable-${version}.${ext}"
     }
   },
   "allowScripts": {
     "esbuild@0.21.5": true,
     "electron@38.8.6": true,
     "electron-winstaller@5.4.0": true
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.9"
   }
 }

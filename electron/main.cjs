@@ -3,6 +3,7 @@
 const { app, BrowserWindow, Menu, net, protocol, shell } = require('electron');
 const path = require('node:path');
 const { pathToFileURL } = require('node:url');
+const { setupAutoUpdate } = require('./updater.cjs');
 
 const DIST = path.join(__dirname, '..', 'dist');
 const UA = 'poe2-crafting-assistant desktop app';
@@ -52,6 +53,7 @@ if (!app.requestSingleInstanceLock()) {
     Menu.setApplicationMenu(null);
     protocol.handle('app', handleRequest);
     createWindow();
+    setupAutoUpdate();
   });
   app.on('window-all-closed', () => app.quit());
 }

@@ -9,9 +9,10 @@ Interface em português brasileiro (padrão) e inglês, tema escuro, responsiva 
 
 - **No navegador (PC ou celular):** https://marcellobf.github.io/poe2-crafting-assistant/
   Dá para instalar como app pelo ícone de instalar na barra de endereço.
-- **Executável para Windows:** baixe em [Releases](https://github.com/MarcelloBF/poe2-crafting-assistant/releases/latest):
-  - `POE2-Crafting-Assistant-Setup-x.y.z.exe` — instalador (atalho no menu Iniciar e na área de trabalho);
-  - `POE2-Crafting-Assistant-Portable-x.y.z.exe` — roda sem instalar.
+- **Executável para Windows:** baixe `POE2-Crafting-Assistant-Setup-x.y.z.exe` em
+  [Releases](https://github.com/MarcelloBF/poe2-crafting-assistant/releases/latest) e instale
+  (atalho no menu Iniciar e na área de trabalho). **Só é preciso baixar uma vez:** o app procura versões novas
+  ao abrir (e a cada 4 h aberto), baixa sozinho e oferece reiniciar; se você escolher "Depois", instala ao fechar.
 
   O executável não tem certificado digital pago, então o Windows pode mostrar "O Windows protegeu o computador".
   Clique em **Mais informações → Executar assim mesmo**.
@@ -67,7 +68,7 @@ npm run app:dist
 ## Publicação
 
 - `.github/workflows/pages.yml` — a cada push na `main` (e a cada 6 h, para renovar os preços) roda os testes, gera o build e publica no GitHub Pages.
-- `.github/workflows/release.yml` — ao enviar uma tag `vX.Y.Z` (com a mesma versão do `package.json`), gera o instalador e a versão portátil e anexa à Release.
+- `.github/workflows/release.yml` — ao enviar uma tag `vX.Y.Z` (com a mesma versão do `package.json`), gera o instalador e anexa à Release junto com o `latest.yml`, que os apps instalados consultam para se atualizar (`electron/updater.cjs`, log em `%APPDATA%\POE2 Crafting Assistant\updater.log`).
 
 ## Testes
 
