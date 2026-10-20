@@ -68,7 +68,7 @@ npm run app:dist
 ## Publicação
 
 - `.github/workflows/pages.yml` — a cada push na `main` (e a cada 6 h, para renovar os preços) roda os testes, gera o build e publica no GitHub Pages.
-- `.github/workflows/release.yml` — ao enviar uma tag `vX.Y.Z` (com a mesma versão do `package.json`), gera o instalador e anexa à Release junto com o `latest.yml`, que os apps instalados consultam para se atualizar (`electron/updater.cjs`, log em `%APPDATA%\POE2 Crafting Assistant\updater.log`).
+- `.github/workflows/release.yml` — ao enviar uma tag `vX.Y.Z` (com a mesma versão do `package.json`), gera o instalador e anexa à Release junto com o `latest.yml`, que os apps instalados consultam para se atualizar (`electron/updater.cjs`, log em `%APPDATA%\poe2-crafting-assistant\updater.log`).
 
 ## Testes
 
