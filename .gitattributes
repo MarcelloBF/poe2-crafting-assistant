@@ -1,0 +1,4 @@
+# LF em todo checkout: com CRLF, o Vitest não carrega os scripts .mjs com shebang (#!/usr/bin/env node).
+* text=auto eol=lf
+*.png binary
+*.ico binary
