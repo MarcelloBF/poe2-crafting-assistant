@@ -1839,3 +1839,36 @@ button.danger-solid {
     grid-template-columns: 1fr;
   }
 }
+
+/* Opções da etapa (tutorial): variações com presságios e versões Greater/Perfect. */
+.step-options {
+  margin: 0.8rem 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.8rem;
+  background: var(--panel2);
+}
+.step-options > summary {
+  cursor: pointer;
+  padding: 0.2rem 0;
+}
+.step-options .accent {
+  color: var(--gold2);
+}
+.step-options tr.selected td {
+  background: rgba(200, 165, 90, 0.08);
+}
+.opt-legend {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+}
+.opt-legend li {
+  margin: 0.15rem 0;
+}
+.opt-table td.opt-action {
+  min-width: 13rem;
+}
+.opt-table td.num,
+.opt-table th {
+  white-space: nowrap;
+}

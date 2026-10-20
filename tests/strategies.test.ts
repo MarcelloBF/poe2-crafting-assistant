@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { newItem, type ItemState } from '../src/engine/item';
-import { candidateStrategies, decide, type Strategy } from '../src/engine/strategies';
+import { candidateStrategies, decide, pickGrade, type Strategy } from '../src/engine/strategies';
+import { stepOptions, usefulOptions } from '../src/engine/stepOptions';
 import { simulateStrategy } from '../src/engine/simulate';
 import { compareStrategies, pickProfiles, type StrategyEvaluation } from '../src/engine/compare';
 import type { TargetSpec } from '../src/engine/target';
@@ -157,5 +158,41 @@ describe('candidatos e comparação', () => {
     const c = compareStrategies(ctx, strategies.slice(0, 3), rareTarget, 500, null, null);
     expect(c.evaluations).toHaveLength(3);
     expect(c.consistent.strategyId).not.toBeNull();
+  });
+});
+
+describe('versões Greater/Perfect e opções da etapa', () => {
+  const fireT = (minTier: number): TargetSpec => ({ baseId: 'Ring', ilvl: 80, rarity: 'rare', requirements: [{ id: 'f', family: 'suffix:Fire', minTier, required: true, priority: 1 }] });
+  const rare = (mods: string[]): ItemState => ({ baseId: 'Ring', ilvl: 80, rarity: 'rare', mods: mods.map((modId) => ({ modId })) });
+  it('usa a versão mais forte que não exclui tiers aceitos', () => {
+    const ctx = ctxWith();
+    // Só Fire3 (nível 40) aceito: Greater (35) serve, Perfect (50) excluiria o próprio alvo.
+    expect(pickGrade(ctx, 'exalt', fireT(1), rare(['Mana1']))).toBe('greater');
+    // Fire2 (nível 20) também aceito: qualquer nível mínimo o excluiria.
+    expect(pickGrade(ctx, 'exalt', fireT(2), rare(['Mana1']))).toBe('normal');
+  });
+  it('estratégia "auto" escolhe o Exaltado Maior quando ajuda', () => {
+    const ctx = ctxWith();
+    const s: Strategy = { id: 'auto', kind: 'magicExalt', params: { grade: 'auto', sideOmens: true, recovery: 'restart', maxActions: 40 } };
+    const d = decide(ctx, s, fireT(1), rare(['Mana1']), 2);
+    expect(d.kind === 'action' && d.spec.currency).toBe('greater-exalt');
+  });
+  it('opções da etapa comparam presságios e versões pela chance exata', () => {
+    const ctx = ctxWith();
+    const opts = stepOptions(ctx, rare(['Mana1']), fireT(1), { currency: 'exalt' }, null);
+    expect(opts[0].recommended).toBe(true);
+    const plain = opts.find((o) => o.spec.currency === 'exalt' && !o.spec.omens?.length)!;
+    const dextral = opts.find((o) => o.spec.currency === 'exalt' && o.spec.omens?.join() === 'dextral-exaltation')!;
+    const greaterDextral = opts.find((o) => o.spec.currency === 'greater-exalt' && o.spec.omens?.join() === 'dextral-exaltation')!;
+    // Forçar sufixo e cortar tiers baixos só pode ajudar a acertar Fire3.
+    expect(dextral.improves!).toBeGreaterThan(plain.improves!);
+    expect(greaterDextral.improves!).toBeGreaterThan(dextral.improves!);
+    // Sem livro de preços o custo fica desconhecido, nunca zero.
+    expect(opts.every((o) => o.cost === null)).toBe(true);
+    // Úteis: some o presságio de prefixo (não ajuda a pegar um sufixo) e fica a recomendada.
+    const useful = usefulOptions(opts);
+    expect(useful.some((o) => o.recommended)).toBe(true);
+    expect(useful.some((o) => o.spec.omens?.includes('sinistral-exaltation'))).toBe(false);
+    expect(useful.some((o) => o === greaterDextral)).toBe(true);
   });
 });

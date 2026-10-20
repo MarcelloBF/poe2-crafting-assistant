@@ -11,6 +11,7 @@ import { type ItemState, cloneItem } from '../engine/item';
 import { BUY_MATERIAL, type RunStats } from '../engine/simulate';
 import { buyOptionByKey, matchesBuyOption } from '../engine/buy';
 import { BuyOptionCard } from '../components/BuyOptions';
+import { StepOptions } from '../components/StepOptions';
 import { useConfirm } from '../components/confirm';
 import { runJob } from '../worker/client';
 import { type Project, materialsUsed, recordAttempt, recordManualState, startNewBase, tutorialState, undoAttempt } from '../engine/project';
@@ -44,6 +45,8 @@ export function ProjectPage() {
   const confirmDialog = useConfirm();
   const className = useClassName();
   const [showAllHistory, setShowAllHistory] = useState(false);
+  /** Variação escolhida no quadro de opções (null = a ação recomendada). */
+  const [altSpec, setAltSpec] = useState<ActionSpec | null>(null);
 
   const ts = project ? tutorialState(ctx, project) : null;
   const decision = ts?.decision ?? null;
@@ -55,6 +58,7 @@ export function ProjectPage() {
     if (decision?.kind === 'buy') base = cloneItem(buyOptionByKey(ctx, project.target, decision.optionKey)?.item ?? base);
     setReport(base);
     setMessage(null);
+    setAltSpec(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [project?.attempts.length, project?.strategy?.id]);
 
@@ -93,7 +97,7 @@ export function ProjectPage() {
 
   function submit(opts: { markFail?: boolean; markUnexpected?: boolean }) {
     if (!project || !report || decision?.kind !== 'action') return;
-    const r = recordAttempt(ctx, project, decision.spec, report, { ...opts, note: note || undefined, recommended: actionLabel(ctx, decision.spec, 'en') });
+    const r = recordAttempt(ctx, project, altSpec ?? decision.spec, report, { ...opts, note: note || undefined, recommended: actionLabel(ctx, decision.spec, 'en') });
     if (!r.project) {
       setMessage({ kind: 'error', text: r.issues.map((i) => t(i.key, i.params)).join(' ') });
       return;
@@ -225,7 +229,7 @@ export function ProjectPage() {
                         </div>
                         <p>{t(decision.reasonKey)}</p>
                         {opt ? <BuyOptionCard target={project.target} option={opt} /> : <p className="banner error small">{t('buy.optionGone')}</p>}
-                        <div className="report">
+                    <div className="report">
                           <h4>{t('buy.report')}</h4>
                           <p className="small muted">{t('tut.reportHelp')}</p>
                           <ItemEditor ctx={ctx} item={report} onChange={setReport} />
@@ -317,6 +321,7 @@ export function ProjectPage() {
                         </details>
                       </>
                     )}
+                    <StepOptions item={project.item} target={project.target} spec={decision.spec} book={prices} selected={altSpec} onSelect={setAltSpec} />
                     <div className="report">
                       <h4>📝 {t('tut.report')}</h4>
                       <p className="small muted">{t('tut.reportHelp')}</p>

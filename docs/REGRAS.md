@@ -33,9 +33,11 @@ o Chaos Orb do PoE2 **não** rerrola o item inteiro).
 | Annulment | Remove 1 mod aleatório (não fraturado) | confirmado |
 | Divine | Rerrola valores (mods não fraturados) | confirmado |
 | Fracturing | Raro com ≥ 4 mods, sem fraturado: fratura 1 mod aleatório | comunidade |
-| Greater/Perfect Exalted | Nível mínimo de mod 35 / 50 | comunidade (poe2wiki) |
-| Greater/Perfect Chaos | Nível mínimo de mod 35 / 50 | comunidade (poe2wiki) |
-| Greater/Perfect Transmutation, Augmentation, Regal | Nível mínimo **desconhecido** | não confirmado → indisponível até o jogador informar |
+| Greater/Perfect Transmutation | Nível mínimo de mod 44 / 70 | confirmado (texto do item, poe2db) |
+| Greater/Perfect Augmentation | Nível mínimo de mod 44 / 70 | confirmado (texto do item, poe2db) |
+| Greater/Perfect Regal | Nível mínimo de mod 35 / 50 | confirmado (texto do item, poe2db) |
+| Greater/Perfect Exalted | Nível mínimo de mod 35 / 50 | confirmado (texto do item, poe2db) |
+| Greater/Perfect Chaos | Nível mínimo de mod 35 / 50 | confirmado (texto do item, poe2db) |
 
 **Nível mínimo (Greater/Perfect)**: se nenhum tier de uma família atinge o mínimo, a família continua
 elegível com todos os seus tiers (interpretação do texto "exceto se um tipo de modificador seria excluído
@@ -55,6 +57,23 @@ Remoções (Chaos/Annulment) escolhem uniformemente entre os mods removíveis.
 | Sinistral / Dextral Coronation | Regal adiciona só prefixo / só sufixo | confirmado (texto do jogo) |
 | Sinistral / Dextral Alchemy | Alquimia com o máximo de prefixos / sufixos | confirmado (texto do jogo) |
 | Greater Annulment | Anulação remove dois mods | confirmado (texto do jogo) |
+| Sinistral / Dextral Crystallisation | Essência Perfect remove só prefixo / só sufixo | confirmado (texto do jogo) |
+| Light | Anulação remove só mods profanados (Abyss) | confirmado (texto do jogo) |
+| Sovereign / Liege / Blackblooded | Profanação em arma/joia garante mod de Ulaman / Amanamu / Kurgal | confirmado (texto do jogo) |
+| Sinistral / Dextral Necromancy | Profanação adiciona só prefixo / só sufixo | confirmado (texto do jogo) |
+| Abyssal Echoes | Rerrola uma vez as opções reveladas | confirmado (texto do jogo) |
+
+Ainda **não modelados** (aparecem em "Mecânicas não modeladas"): Homogenising Exaltation/Coronation
+("adiciona um mod do mesmo tipo de um já existente" — o jogo não define "tipo" de forma verificável),
+Catalysing Exaltation (depende de catalisadores), Putrefaction, Sanctification e Corruption.
+
+## Opções da etapa (tutorial)
+
+Em cada etapa o tutorial mostra a ação recomendada e as variações aplicáveis ao item **atual**:
+cada versão (normal / Greater / Perfect) da moeda e cada presságio que vale para ela. Para cada uma,
+o cálculo exato de uma aplicação dá a chance de **melhorar o item** (cumprir mais um requisito, ou
+remover um mod inútil sem perder nada) e de o objetivo **continuar possível**, mais o custo de um uso
+e o custo por melhora. O jogador pode marcar a opção que vai usar; o resultado é registrado com ela.
 
 Todos os presságios usam o texto oficial do item (via poe2db) e estão em `src/data/rules.ts`.
 
@@ -150,7 +169,9 @@ simulada.
 | Alquimia → Caos repetido | Caos (normal ou Greater) até completar, limite de ações por base |
 | Essência → Exaltados | conforme o modo da essência cadastrada |
 
-Variantes: grau Greater/Perfect, presságios de lado, recuperação por Anulação. Estratégias cujas
+Variantes: grau Greater/Perfect fixo, grau **automático** (em cada Transmutação, Aumento, Régio e Exaltado
+usa a versão mais forte cujo nível mínimo não exclui nenhum tier aceito do que falta), presságios de lado,
+Cristalização na essência Perfect, recuperação por Anulação. Estratégias cujas
 regras têm dados desconhecidos são **excluídas e listadas com o motivo**.
 
 **Perfis do comparador** (critério sempre exibido):

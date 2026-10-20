@@ -19,7 +19,9 @@ export type CurrencyKind =
   | 'annul'
   | 'divine'
   | 'fracture'
-  | 'desecrate';
+  | 'desecrate'
+  /** Essências (usado só por presságios que modificam essências). */
+  | 'essence';
 
 export type Grade = 'normal' | 'greater' | 'perfect';
 
@@ -53,7 +55,8 @@ export type OmenEffect =
   | { kind: 'alchemySide'; side: 'prefix' | 'suffix' }
   | { kind: 'desecrateSide'; side: 'prefix' | 'suffix' }
   | { kind: 'desecrateLord'; lord: 'ulaman' | 'amanamu' | 'kurgal' }
-  | { kind: 'desecrateReroll' };
+  | { kind: 'desecrateReroll' }
+  | { kind: 'essenceRemoveSide'; side: 'prefix' | 'suffix' };
 
 export interface OmenRule {
   id: string;
@@ -148,20 +151,20 @@ export const DEFAULT_RULES: GameRules = {
   alchemyModCount: 4,
   currencies: {
     transmute: cur('transmute', 'transmute', 'normal', 'Orb of Transmutation', 'Orbe de Transmutação', 0, 'confirmed', SRC_GAME),
-    'greater-transmute': cur('greater-transmute', 'transmute', 'greater', 'Greater Orb of Transmutation', 'Orbe de Transmutação Maior', null, 'unverified', 'Nível mínimo não confirmado'),
-    'perfect-transmute': cur('perfect-transmute', 'transmute', 'perfect', 'Perfect Orb of Transmutation', 'Orbe de Transmutação Perfeito', null, 'unverified', 'Nível mínimo não confirmado'),
+    'greater-transmute': cur('greater-transmute', 'transmute', 'greater', 'Greater Orb of Transmutation', 'Orbe de Transmutação Maior', 44, 'confirmed', SRC_ITEM),
+    'perfect-transmute': cur('perfect-transmute', 'transmute', 'perfect', 'Perfect Orb of Transmutation', 'Orbe de Transmutação Perfeito', 70, 'confirmed', SRC_ITEM),
     augment: cur('augment', 'augment', 'normal', 'Orb of Augmentation', 'Orbe de Aumento', 0, 'confirmed', SRC_GAME),
-    'greater-augment': cur('greater-augment', 'augment', 'greater', 'Greater Orb of Augmentation', 'Orbe de Aumento Maior', null, 'unverified', 'Nível mínimo não confirmado'),
-    'perfect-augment': cur('perfect-augment', 'augment', 'perfect', 'Perfect Orb of Augmentation', 'Orbe de Aumento Perfeito', null, 'unverified', 'Nível mínimo não confirmado'),
+    'greater-augment': cur('greater-augment', 'augment', 'greater', 'Greater Orb of Augmentation', 'Orbe de Aumento Maior', 44, 'confirmed', SRC_ITEM),
+    'perfect-augment': cur('perfect-augment', 'augment', 'perfect', 'Perfect Orb of Augmentation', 'Orbe de Aumento Perfeito', 70, 'confirmed', SRC_ITEM),
     regal: cur('regal', 'regal', 'normal', 'Regal Orb', 'Orbe Régio', 0, 'confirmed', SRC_GAME),
-    'greater-regal': cur('greater-regal', 'regal', 'greater', 'Greater Regal Orb', 'Orbe Régio Maior', null, 'unverified', 'Nível mínimo não confirmado'),
-    'perfect-regal': cur('perfect-regal', 'regal', 'perfect', 'Perfect Regal Orb', 'Orbe Régio Perfeito', null, 'unverified', 'Nível mínimo não confirmado'),
+    'greater-regal': cur('greater-regal', 'regal', 'greater', 'Greater Regal Orb', 'Orbe Régio Maior', 35, 'confirmed', SRC_ITEM),
+    'perfect-regal': cur('perfect-regal', 'regal', 'perfect', 'Perfect Regal Orb', 'Orbe Régio Perfeito', 50, 'confirmed', SRC_ITEM),
     exalt: cur('exalt', 'exalt', 'normal', 'Exalted Orb', 'Orbe Exaltado', 0, 'confirmed', SRC_GAME),
-    'greater-exalt': cur('greater-exalt', 'exalt', 'greater', 'Greater Exalted Orb', 'Orbe Exaltado Maior', 35, 'community', SRC_WIKI),
-    'perfect-exalt': cur('perfect-exalt', 'exalt', 'perfect', 'Perfect Exalted Orb', 'Orbe Exaltado Perfeito', 50, 'community', SRC_WIKI),
+    'greater-exalt': cur('greater-exalt', 'exalt', 'greater', 'Greater Exalted Orb', 'Orbe Exaltado Maior', 35, 'confirmed', SRC_ITEM),
+    'perfect-exalt': cur('perfect-exalt', 'exalt', 'perfect', 'Perfect Exalted Orb', 'Orbe Exaltado Perfeito', 50, 'confirmed', SRC_ITEM),
     chaos: cur('chaos', 'chaos', 'normal', 'Chaos Orb', 'Orbe do Caos', 0, 'confirmed', SRC_GAME),
-    'greater-chaos': cur('greater-chaos', 'chaos', 'greater', 'Greater Chaos Orb', 'Orbe do Caos Maior', 35, 'community', SRC_WIKI),
-    'perfect-chaos': cur('perfect-chaos', 'chaos', 'perfect', 'Perfect Chaos Orb', 'Orbe do Caos Perfeito', 50, 'community', SRC_WIKI),
+    'greater-chaos': cur('greater-chaos', 'chaos', 'greater', 'Greater Chaos Orb', 'Orbe do Caos Maior', 35, 'confirmed', SRC_ITEM),
+    'perfect-chaos': cur('perfect-chaos', 'chaos', 'perfect', 'Perfect Chaos Orb', 'Orbe do Caos Perfeito', 50, 'confirmed', SRC_ITEM),
     alchemy: cur('alchemy', 'alchemy', 'normal', 'Orb of Alchemy', 'Orbe de Alquimia', 0, 'confirmed', SRC_GAME),
     annul: cur('annul', 'annul', 'normal', 'Orb of Annulment', 'Orbe de Anulação', 0, 'confirmed', SRC_GAME),
     divine: cur('divine', 'divine', 'normal', 'Divine Orb', 'Orbe Divino', 0, 'confirmed', SRC_GAME),
@@ -188,6 +191,8 @@ export const DEFAULT_RULES: GameRules = {
     sovereign: omen('sovereign', 'Omen of the Sovereign', 'Presságio do Soberano (Ulaman)', 'desecrate', { kind: 'desecrateLord', lord: 'ulaman' }, 'Your next Weapon or Jewellery Desecration attempt will guarantee a random Ulaman modifier'),
     liege: omen('liege', 'Omen of the Liege', 'Presságio do Suserano (Amanamu)', 'desecrate', { kind: 'desecrateLord', lord: 'amanamu' }, 'Your next Weapon or Jewellery Desecration attempt will guarantee a random Amanamu modifier'),
     blackblooded: omen('blackblooded', 'Omen of the Blackblooded', 'Presságio do Sangue-Negro (Kurgal)', 'desecrate', { kind: 'desecrateLord', lord: 'kurgal' }, 'Your next Weapon or Jewellery Desecration attempt will guarantee a random Kurgal modifier'),
+    'sinistral-crystallisation': omen('sinistral-crystallisation', 'Omen of Sinistral Crystallisation', 'Presságio da Cristalização Sinistra', 'essence', { kind: 'essenceRemoveSide', side: 'prefix' }, 'Your next Perfect or Corrupted Essence will remove only Prefix modifiers'),
+    'dextral-crystallisation': omen('dextral-crystallisation', 'Omen of Dextral Crystallisation', 'Presságio da Cristalização Destra', 'essence', { kind: 'essenceRemoveSide', side: 'suffix' }, 'Your next Perfect or Corrupted Essence will remove only Suffix modifiers'),
     'abyssal-echoes': omen('abyssal-echoes', 'Omen of Abyssal Echoes', 'Presságio dos Ecos Abissais', 'desecrate', { kind: 'desecrateReroll' }, 'The next time you reveal Desecrated modifiers you can reroll the options once'),
   },
   desecration: {

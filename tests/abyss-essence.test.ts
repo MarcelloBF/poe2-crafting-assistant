@@ -184,6 +184,18 @@ describe('essências', () => {
     expect(d.outcomes.every((o) => o.item.mods.some((m) => m.modId === 'Fire3'))).toBe(true);
     expect(d.outcomes.reduce((s, o) => s + o.p, 0)).toBeCloseTo(1, 10);
   });
+  it('Cristalização: a essência Perfect remove só do lado do presságio', () => {
+    const c = createContext(DATA2, structuredClone(DEFAULT_RULES), { table: null, hypothesis: { kind: 'none' } }, ess('rareReplace', ['Fire3']));
+    const it = ring(['Life1', 'Cold1', 'Str1']);
+    const d = actionDistribution(c, it, { currency: 'essence', essenceId: 'e', omens: ['sinistral-crystallisation'] })!;
+    // Único prefixo (Life1) sai; os sufixos ficam.
+    expect(d.outcomes).toHaveLength(1);
+    expect(d.outcomes[0].item.mods.map((m) => m.modId).sort()).toEqual(['Cold1', 'Fire3', 'Str1']);
+    // Presságio de essência não vale para Exaltado, e Cristalização não vale para essência que não remove.
+    expect(checkAction(c, it, { currency: 'exalt', omens: ['sinistral-crystallisation'] }).ok).toBe(false);
+    const c2 = createContext(DATA2, structuredClone(DEFAULT_RULES), { table: null, hypothesis: { kind: 'none' } }, ess('magicToRare', ['Fire3']));
+    expect(checkAction(c2, ring([], 'magic'), { currency: 'essence', essenceId: 'e', omens: ['dextral-crystallisation'] }).ok).toBe(false);
+  });
   it('essência não se aplica a outra categoria', () => {
     const c = createContext(DATA2, structuredClone(DEFAULT_RULES), { table: null, hypothesis: { kind: 'none' } }, ess('magicToRare', ['Fire3']));
     expect(checkAction(c, { baseId: 'Boots', ilvl: 80, rarity: 'magic', mods: [] }, { currency: 'essence', essenceId: 'e' }).ok).toBe(false);

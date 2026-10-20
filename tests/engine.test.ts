@@ -126,8 +126,10 @@ describe('regras dos métodos de crafting', () => {
   });
   it('moedas com nível mínimo desconhecido são recusadas', () => {
     const ctx = ctxWith();
-    const r = checkAction(ctx, newItem('Ring', 80), { currency: 'greater-transmute' });
-    expect(r.ok).toBe(false);
+    // Greater Transmutation tem nível mínimo confirmado (44); simula uma regra ainda sem esse dado.
+    expect(checkAction(ctx, newItem('Ring', 80), { currency: 'greater-transmute' }).ok).toBe(true);
+    ctx.rules.currencies['greater-transmute'] = { ...ctx.rules.currencies['greater-transmute'], minModLevel: null };
+    expect(checkAction(ctx, newItem('Ring', 80), { currency: 'greater-transmute' }).ok).toBe(false);
   });
   it('Fracturing exige 4+ mods', () => {
     const ctx = ctxWith();

@@ -9,8 +9,12 @@ import { type TargetSpec, acceptedEntries, completableByAdding, evaluate, junkMo
 export type StrategyKind = 'magicExalt' | 'alchemyExalt' | 'alchemyChaos' | 'essenceExalt';
 
 export interface StrategyParams {
-  /** Grau das moedas que adicionam mods na fase rara (Exalted/Chaos). */
-  grade: Grade;
+  /**
+   * Grau das moedas que adicionam mods. Fixo: vale para os Exaltados/Caos da fase rara.
+   * "auto": em cada etapa (Transmutação, Aumento, Régio, Exaltado) usa a versão Greater/Perfect
+   * mais forte cujo nível mínimo não exclui nenhum tier aceito do que falta.
+   */
+  grade: Grade | 'auto';
   sideOmens: boolean;
   recovery: 'restart' | 'annul';
   essenceId?: string;
@@ -44,6 +48,33 @@ export type Decision =
 
 function cid(ctx: CraftContext, kind: Parameters<typeof currencyFor>[1], grade: Grade = 'normal'): string {
   return currencyFor(ctx.rules, kind, grade)?.id ?? kind;
+}
+
+const GRADES_STRONGEST_FIRST: Grade[] = ['perfect', 'greater', 'normal'];
+
+/**
+ * Versão (normal/Greater/Perfect) para uma moeda que adiciona mod: a de maior nível mínimo que ainda
+ * permite todos os tiers aceitos dos requisitos que faltam nos lados possíveis. Elimina tiers baixos
+ * (inclusive de mods indesejados) sem perder nada do objetivo.
+ */
+export function pickGrade(ctx: CraftContext, kind: 'transmute' | 'augment' | 'regal' | 'exalt', t: TargetSpec, it: ItemState, sides?: Gen[]): Grade {
+  const wanted = missingRequired(ctx, t, it)
+    .filter((r) => familyKind(r.family) === 'normal' && (!sides || sides.includes(familyGen(r.family))))
+    .flatMap((r) => acceptedEntries(ctx, t, r))
+    .map((e) => e.mod.level);
+  if (!wanted.length) return 'normal';
+  const lowest = Math.min(...wanted);
+  for (const g of GRADES_STRONGEST_FIRST) {
+    const lvl = currencyFor(ctx.rules, kind, g)?.minModLevel;
+    if (lvl != null && lvl <= lowest) return g;
+  }
+  return 'normal';
+}
+
+/** Moeda que adiciona mod, respeitando o grau da estratégia (fixo só para Exaltado/Caos). */
+function adder(ctx: CraftContext, s: Strategy, kind: 'transmute' | 'augment' | 'regal' | 'exalt', t: TargetSpec, it: ItemState, sides?: Gen[]): string {
+  if (s.params.grade === 'auto') return cid(ctx, kind, pickGrade(ctx, kind, t, it, sides));
+  return cid(ctx, kind, kind === 'exalt' ? s.params.grade : 'normal');
 }
 
 const sideOmen = (kind: 'exaltation' | 'annulment' | 'coronation' | 'necromancy', side: Gen) => `${side === 'prefix' ? 'sinistral' : 'dextral'}-${kind}`;
@@ -90,12 +121,15 @@ function magicPhase(ctx: CraftContext, s: Strategy, t: TargetSpec, it: ItemState
   // Mods exclusivos da Abyss não saem de Aumento/Régio: só lados com requisitos normais contam.
   const missing = new Set(missingRequired(ctx, t, it).filter((r) => familyKind(r.family) === 'normal').map((r) => familyGen(r.family)));
   const open = openSides(ctx, it);
-  if (open.some((x) => missing.has(x))) return { kind: 'action', spec: { currency: cid(ctx, 'augment') }, reasonKey: 'dec.augment' };
+  if (open.some((x) => missing.has(x))) return { kind: 'action', spec: { currency: adder(ctx, s, 'augment', t, it, open) }, reasonKey: 'dec.augment' };
   if (t.rarity === 'magic') return { kind: 'restart', reasonKey: 'dec.magicNoRoom' };
-  const spec: ActionSpec = { currency: cid(ctx, 'regal') };
+  const spec: ActionSpec = { currency: adder(ctx, s, 'regal', t, it) };
   if (s.params.sideOmens && missing.size === 1) {
     const side = [...missing][0];
-    if (openSides(ctx, it, 'rare').includes(side)) spec.omens = [sideOmen('coronation', side)];
+    if (openSides(ctx, it, 'rare').includes(side)) {
+      spec.omens = [sideOmen('coronation', side)];
+      spec.currency = adder(ctx, s, 'regal', t, it, [side]);
+    }
   }
   return { kind: 'action', spec, reasonKey: 'dec.regal' };
 }
@@ -109,10 +143,13 @@ function rarePhase(ctx: CraftContext, s: Strategy, t: TargetSpec, it: ItemState)
     const normalMissing = missingRequired(ctx, t, it).filter((r) => familyKind(r.family) !== 'desecrated');
     const abyssSides = new Set(missingRequired(ctx, t, it).filter((r) => familyKind(r.family) === 'desecrated').map((r) => familyGen(r.family)));
     const missing = new Set(normalMissing.map((r) => familyGen(r.family)));
-    const spec: ActionSpec = { currency: cid(ctx, 'exalt', s.params.grade) };
+    const spec: ActionSpec = { currency: adder(ctx, s, 'exalt', t, it, open) };
     // Se falta um mod da Abyss num lado, o Exaltado deve ir para o outro lado (preserva o espaço).
     const forced = abyssSides.size === 1 && missing.size === 1 && !missing.has([...abyssSides][0]) ? [...missing][0] : null;
-    if ((s.params.sideOmens || forced) && missing.size === 1 && open.length === 2) spec.omens = [sideOmen('exaltation', [...missing][0])];
+    if ((s.params.sideOmens || forced) && missing.size === 1 && open.length === 2) {
+      spec.omens = [sideOmen('exaltation', [...missing][0])];
+      spec.currency = adder(ctx, s, 'exalt', t, it, [...missing]);
+    }
     if (!checkAction(ctx, it, spec).ok) spec.currency = cid(ctx, 'exalt');
     return { kind: 'action', spec, reasonKey: spec.omens ? 'dec.exaltOmen' : 'dec.exalt' };
   }
@@ -148,7 +185,7 @@ export function decide(ctx: CraftContext, s: Strategy, t: TargetSpec, it: ItemSt
 
   switch (s.kind) {
     case 'magicExalt':
-      if (it.rarity === 'normal') return { kind: 'action', spec: { currency: cid(ctx, 'transmute') }, reasonKey: 'dec.transmute' };
+      if (it.rarity === 'normal') return { kind: 'action', spec: { currency: adder(ctx, s, 'transmute', t, it) }, reasonKey: 'dec.transmute' };
       if (it.rarity === 'magic') return magicPhase(ctx, s, t, it);
       return rarePhase(ctx, s, t, it);
     case 'alchemyExalt':
@@ -158,7 +195,7 @@ export function decide(ctx: CraftContext, s: Strategy, t: TargetSpec, it: ItemSt
     case 'alchemyChaos':
       if (it.rarity === 'normal') return { kind: 'action', spec: { currency: cid(ctx, 'alchemy') }, reasonKey: 'dec.alchemy' };
       if (it.rarity === 'magic') return { kind: 'fail', reasonKey: 'dec.unexpectedRarity' };
-      return { kind: 'action', spec: { currency: cid(ctx, 'chaos', s.params.grade) }, reasonKey: 'dec.chaos' };
+      return { kind: 'action', spec: { currency: cid(ctx, 'chaos', s.params.grade === 'auto' ? 'normal' : s.params.grade) }, reasonKey: 'dec.chaos' };
     case 'essenceExalt': {
       const e = essenceById(ctx, s.params.essenceId);
       if (!e) return { kind: 'fail', reasonKey: 'dec.unknownEssence' };
@@ -184,6 +221,20 @@ export function decide(ctx: CraftContext, s: Strategy, t: TargetSpec, it: ItemSt
       if (it.rarity === 'normal') return { kind: 'action', spec: { currency: cid(ctx, 'alchemy') }, reasonKey: 'dec.alchemy' };
       if (it.rarity === 'rare' && !hasEss) {
         if (!checkAction(ctx, it, ess).ok) return { kind: 'restart', reasonKey: 'dec.essenceBlocked' };
+        // Crystallisation: a essência Perfect remove só do lado do presságio — usado quando todo o lixo
+        // está num lado sem mods bons (e o mod da essência ainda cabe).
+        if (s.params.sideOmens) {
+          const junk = junkMods(ctx, t, it).filter((m) => !m.fractured);
+          const sides = new Set(junk.map((m) => ctx.modsById.get(m.modId)!.gen));
+          const essSide = ctx.modsById.get(ef.modIds[0])!.gen;
+          if (sides.size === 1) {
+            const side = [...sides][0];
+            const goodSameSide = it.mods.some((m) => !junk.includes(m) && ctx.modsById.get(m.modId)!.gen === side);
+            const fits = side === essSide || openSides(ctx, it, 'rare').includes(essSide);
+            const withOmen: ActionSpec = { ...ess, omens: [`${side === 'prefix' ? 'sinistral' : 'dextral'}-crystallisation`] };
+            if (!goodSameSide && fits && checkAction(ctx, it, withOmen).ok) return { kind: 'action', spec: withOmen, reasonKey: 'dec.essenceCrystal' };
+          }
+        }
         return { kind: 'action', spec: ess, reasonKey: 'dec.essence' };
       }
       return rarePhase(ctx, s, t, it);
@@ -200,7 +251,7 @@ export interface Applicability {
 export function strategyApplicable(ctx: CraftContext, s: Strategy, t: TargetSpec): Applicability {
   if (t.rarity === 'magic' && s.kind !== 'magicExalt' && !(s.kind === 'essenceExalt' && essenceById(ctx, s.params.essenceId)?.mode === 'normalToMagic'))
     return { ok: false, reasonKey: 'app.notForMagic' };
-  if (s.params.grade !== 'normal') {
+  if (s.params.grade !== 'normal' && s.params.grade !== 'auto') {
     const kind = s.kind === 'alchemyChaos' ? 'chaos' : 'exalt';
     const r = currencyFor(ctx.rules, kind, s.params.grade);
     if (!r || r.minModLevel === null) return { ok: false, reasonKey: 'app.unknownMinLevel', params: { currency: r?.nameEn ?? kind } };
@@ -249,6 +300,10 @@ export function candidateStrategies(ctx: CraftContext, t: TargetSpec): { strateg
     all.push(mk('magicExalt', { grade: 'normal', sideOmens: true, recovery: 'restart' }));
     all.push(mk('magicExalt', { grade: 'normal', sideOmens: true, recovery: 'annul' }));
     for (const grade of ['greater', 'perfect'] as Grade[]) all.push(mk('magicExalt', { grade, sideOmens: true, recovery: 'restart' }));
+    // Versão Greater/Perfect escolhida em cada etapa (só quando não elimina tiers aceitos).
+    all.push(mk('magicExalt', { grade: 'auto', sideOmens: true, recovery: 'restart' }));
+    all.push(mk('magicExalt', { grade: 'auto', sideOmens: true, recovery: 'annul' }));
+    all.push(mk('alchemyExalt', { grade: 'auto', sideOmens: true, recovery: 'annul' }));
     all.push(mk('alchemyExalt', { grade: 'normal', sideOmens: false, recovery: 'restart' }));
     all.push(mk('alchemyExalt', { grade: 'normal', sideOmens: true, recovery: 'annul' }));
     if (!needsAbyss) {
@@ -272,6 +327,7 @@ export function candidateStrategies(ctx: CraftContext, t: TargetSpec): { strateg
   // Comprar um item mágico com o(s) mod(s) mais difícil(eis) e continuar dele.
   for (const o of buyOptions(ctx, t)) {
     all.push(mk('magicExalt', { grade: 'normal', sideOmens: true, recovery: t.rarity === 'rare' ? 'annul' : 'restart', buy: o.key }));
+    if (t.rarity === 'rare') all.push(mk('magicExalt', { grade: 'auto', sideOmens: true, recovery: 'annul', buy: o.key }));
     if (t.rarity === 'rare' && canBone && !needsAbyss) all.push(mk('magicExalt', { grade: 'normal', sideOmens: true, recovery: 'annul', buy: o.key, desecrate: 'last' }));
   }
   // Só essências com efeito para esta categoria de item.

@@ -96,10 +96,14 @@ export function checkAction(ctx: CraftContext, it: ItemState, spec: ActionSpec):
     const ef = essenceEffectFor(ctx, e, it.baseId);
     if (!ef) return { ok: false, key: 'chk.essenceClass' };
     if (e.mode === 'unknown') return { ok: false, key: 'chk.essenceNoEffect' };
+    // Presságios de essência (Crystallisation) só valem para essências que removem um mod (Perfect).
+    for (const o of omens(ctx, spec)) if (o.appliesTo !== 'essence' || e.mode !== 'rareReplace') return { ok: false, key: 'chk.omenMismatch', params: { omen: o.nameEn } };
     const need: Rarity = e.mode === 'normalToMagic' ? 'normal' : e.mode === 'magicToRare' ? 'magic' : 'rare';
     if (it.rarity !== need) return { ok: false, key: 'chk.needRarity', params: { rarity: need } };
     if (e.mode === 'rareReplace') {
-      if (removable(ctx, it).length === 0) return { ok: false, key: 'chk.nothingToRemove' };
+      const crystal = omens(ctx, spec).find((o) => o.effect.kind === 'essenceRemoveSide');
+      const onlySide = crystal && crystal.effect.kind === 'essenceRemoveSide' ? crystal.effect.side : undefined;
+      if (removable(ctx, it, onlySide).length === 0) return { ok: false, key: 'chk.nothingToRemove' };
       const groups = takenGroups(ctx, it);
       if (!ef.modIds.some((id) => !ctx.modsById.get(id)?.groups.some((g) => groups.has(g)))) return { ok: false, key: 'chk.groupTaken' };
       return { ok: true };
@@ -163,6 +167,9 @@ export function checkAction(ctx: CraftContext, it: ItemState, spec: ActionSpec):
       if (!openSides(ctx, it).length && !removable(ctx, it).length) return { ok: false, key: 'chk.noSideSpace' };
       return { ok: true };
     }
+    case 'essence':
+      // Essências usam currency 'essence' (tratada acima), nunca uma regra de moeda.
+      return { ok: false, key: 'chk.unknownCurrency' };
   }
 }
 
@@ -173,6 +180,9 @@ function steps(ctx: CraftContext, it: ItemState, spec: ActionSpec): Step[] {
     const ef = essenceEffectFor(ctx, e, it.baseId)!;
     if (e.mode === 'normalToMagic') return [{ op: 'rarity', rarity: 'magic' }, { op: 'addOneOf', modIds: ef.modIds }];
     if (e.mode === 'magicToRare') return [{ op: 'rarity', rarity: 'rare' }, { op: 'addOneOf', modIds: ef.modIds }];
+    const crystal = omens(ctx, spec).find((o) => o.effect.kind === 'essenceRemoveSide');
+    // "Will remove only Prefix/Suffix modifiers": a remoção fica restrita ao lado do presságio.
+    if (crystal && crystal.effect.kind === 'essenceRemoveSide') return [{ op: 'remove', side: crystal.effect.side }, { op: 'addOneOf', modIds: ef.modIds }];
     const side = ctx.modsById.get(ef.modIds[0])!.gen;
     return [{ op: 'removeForSide', side }, { op: 'addOneOf', modIds: ef.modIds }];
   }
@@ -226,6 +236,8 @@ function steps(ctx: CraftContext, it: ItemState, spec: ActionSpec): Step[] {
       return [{ op: 'reroll' }];
     case 'fracture':
       return [{ op: 'fracture' }];
+    case 'essence':
+      return [];
     case 'desecrate': {
       const lordOmen = os.find((o) => o.effect.kind === 'desecrateLord');
       const lord = lordOmen && lordOmen.effect.kind === 'desecrateLord' ? lordOmen.effect.lord : undefined;
