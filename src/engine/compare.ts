@@ -84,7 +84,11 @@ function argmin<T>(xs: T[], f: (x: T) => number | null): T | null {
  * - Equilibrado: menor soma ponderada de posições (custo 40%, 1 - chance 30%, ações 30%).
  */
 export function pickProfiles(evals: StrategyEvaluation[]): Omit<Comparison, 'evaluations'> {
-  const viable = evals.filter((e) => e.stats.successes > 0 && !e.stats.error);
+  const workable = evals.filter((e) => e.stats.successes > 0 && !e.stats.error);
+  // Começar de um item comprado sem preço conhecido: a chance alta vem de pagar por mods prontos,
+  // então sem o preço não dá para comparar com craftar. Fica na tabela e na recomendação de base.
+  const crafted = workable.filter((e) => e.strategy.params.buy == null || e.costPerRun.total != null);
+  const viable = crafted.length ? crafted : workable;
   const limitationKeys: string[] = [];
   if (evals.some((e) => e.stats.error === 'weights')) limitationKeys.push('cmp.limit.weights');
   if (!viable.length) {

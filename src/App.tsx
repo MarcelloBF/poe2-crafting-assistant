@@ -1,9 +1,10 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { HashRouter, NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import type { CraftContext } from './engine/context';
 import { formatDate, useT } from './i18n';
 import { useCraftContext, useDataset } from './store/dataset';
-import { updateSettings } from './store/store';
+import { updateSettings, useStore } from './store/store';
+import { loadPublishedPrices } from './store/publishedPrices';
 import type { Dataset } from './data/types';
 import { ConfirmProvider } from './components/confirm';
 import { BuilderPage } from './pages/BuilderPage';
@@ -42,6 +43,10 @@ function Shell({ data }: { data: Dataset }) {
   const { t, lang } = useT();
   const [menuOpen, setMenuOpen] = useState(false);
   const loc = useLocation();
+  const league = useStore((s) => s.settings.league);
+  useEffect(() => {
+    loadPublishedPrices();
+  }, [league]);
   return (
     <Ctx.Provider value={ctx}>
       <div className="shell">

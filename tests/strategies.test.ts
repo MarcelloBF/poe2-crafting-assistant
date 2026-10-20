@@ -135,6 +135,10 @@ describe('candidatos e comparação', () => {
     const noPrice = pickProfiles([fake('a', 0.1, null, 3), fake('b', 0.5, null, 3)]);
     expect(noPrice.limitationKeys).toContain('cmp.limit.prices');
     expect(noPrice.economical.criterionKey).toBe('cmp.crit.ecoUnits');
+    // Comprar o item pronto sem preço conhecido não pode vencer nenhum perfil (custo desconhecido ≠ barato).
+    const buy = { ...fake('comprar', 1, null, 1), strategy: { ...basic, id: 'comprar', params: { ...basic.params, buy: 'both' } } };
+    const withBuy = pickProfiles([buy, fake('a', 0.2, null, 5), fake('b', 0.4, null, 6)]);
+    expect([withBuy.economical.strategyId, withBuy.balanced.strategyId, withBuy.consistent.strategyId]).not.toContain('comprar');
   });
   it('comparação completa roda e escolhe perfis', () => {
     const ctx = ctxWith();
