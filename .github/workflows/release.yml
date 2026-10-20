@@ -4,7 +4,6 @@ name: Executável (Windows)
 on:
   push:
     tags: ['v*']
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -24,6 +23,12 @@ jobs:
         continue-on-error: true
       - run: npm test
       - run: npm run build
-      - run: npx electron-builder --win --publish always
+      # Gera sem publicar: o electron-builder publicando os dois alvos em paralelo criava Releases duplicadas.
+      - run: npx electron-builder --win --publish never
+      - name: Publicar Release
+        shell: bash
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" --title "${GITHUB_REF_NAME#v}" --generate-notes \
+            release/*.exe release/*.blockmap release/latest.yml
