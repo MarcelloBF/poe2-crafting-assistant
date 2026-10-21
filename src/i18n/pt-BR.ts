@@ -301,7 +301,7 @@ export const ptBR = {
   'opt.missingPrice': 'Sem preço: {items}',
   'opt.use': 'Vou usar esta',
   'opt.using': '✓ Usando',
-  'opt.help': '"Melhora o item" = chance de cumprir mais um mod do objetivo (ou tirar um mod inútil sem perder nada), calculada exatamente para o seu item atual. Se usar outra opção, marque "Vou usar esta" antes de registrar o resultado.',
+  'opt.help': '"Melhora o item" = chance de cumprir mais um mod do objetivo (ou tirar um mod inútil sem perder nada) sem travar o resto do objetivo, calculada para o seu item atual. Uma opção pode até acertar um mod e ao mesmo tempo encher o item de lixo: isso não conta como melhora. Se usar outra opção, marque "Vou usar esta" antes de registrar o resultado.',
   'opt.grade': 'só gera modificadores de nível {level} ou mais — elimina os tiers baixos do sorteio',
   'opt.side.prefix': 'prefixos',
   'opt.side.suffix': 'sufixos',

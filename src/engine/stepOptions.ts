@@ -11,7 +11,11 @@ import { type TargetSpec, completableByAdding, evaluate, junkMods } from './targ
 export interface StepOption {
   spec: ActionSpec;
   recommended: boolean;
-  /** Chance de a ação melhorar o item: mais requisitos cumpridos, ou o mesmo número com menos mods inúteis. */
+  /**
+   * Chance de a ação melhorar o item SEM travar o objetivo: mais requisitos cumpridos (ou o mesmo número
+   * com menos mods inúteis) e o resto ainda alcançável. Melhora que trava (ex.: Alquimia + Sinistral
+   * enchendo os prefixos de lixo) não conta.
+   */
   improves: number | null;
   /** Chance de o objetivo continuar alcançável (sem precisar de Anulação). */
   keepsPossible: number | null;
@@ -74,10 +78,11 @@ export function stepOptions(ctx: CraftContext, item: ItemState, t: TargetSpec, r
     const spec = { ...v, essenceId: recommended.essenceId, prefer: recommended.prefer };
     if (!checkAction(ctx, item, spec).ok) continue;
     const a = analyzeNextAction(ctx, item, spec, t);
+    const reachable = (after: ItemState) => evaluate(ctx, t, after).allRequiredIgnoringValues || completableByAdding(ctx, t, after, 'rare');
     const better = (after: ItemState) => {
       const ev = evaluate(ctx, t, after);
       const met = ev.met.filter((m, i) => (m || ev.valueShort[i]) && t.requirements[i].required).length;
-      return met > metBefore || (met === metBefore && junkMods(ctx, t, after).length < junkBefore);
+      return (met > metBefore || (met === metBefore && junkMods(ctx, t, after).length < junkBefore)) && reachable(after);
     };
     let improves: number | null = null;
     let keepsPossible = a.stillCompletable.value;
@@ -93,7 +98,7 @@ export function stepOptions(ctx: CraftContext, item: ItemState, t: TargetSpec, r
       for (let i = 0; i < SAMPLES; i++) {
         const after = applyAction(ctx, item, spec, rng).item;
         if (better(after)) imp++;
-        if (evaluate(ctx, t, after).allRequiredIgnoringValues || completableByAdding(ctx, t, after, 'rare')) keep++;
+        if (reachable(after)) keep++;
       }
       improves = imp / SAMPLES;
       keepsPossible = keep / SAMPLES;

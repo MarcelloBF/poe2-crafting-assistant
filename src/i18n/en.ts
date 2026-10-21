@@ -303,7 +303,7 @@ export const en: Dict = {
   'opt.missingPrice': 'No price: {items}',
   'opt.use': 'I will use this',
   'opt.using': '✓ Using',
-  'opt.help': '"Improves the item" = chance to meet one more goal mod (or remove a useless mod without losing anything), computed exactly for your current item. If you use another option, click "I will use this" before reporting the result.',
+  'opt.help': '"Improves the item" = chance to meet one more goal mod (or remove a useless mod without losing anything) without blocking the rest of the goal, computed for your current item. An option may hit a mod while filling the item with junk: that does not count. If you use another option, click "I will use this" before reporting the result.',
   'opt.grade': 'only rolls modifiers of level {level} or higher — removes low tiers from the pool',
   'opt.side.prefix': 'prefixes',
   'opt.side.suffix': 'suffixes',

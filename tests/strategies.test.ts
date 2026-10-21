@@ -195,4 +195,11 @@ describe('versões Greater/Perfect e opções da etapa', () => {
     expect(useful.some((o) => o.spec.omens?.includes('sinistral-exaltation'))).toBe(false);
     expect(useful.some((o) => o === greaterDextral)).toBe(true);
   });
+  it('melhora que trava o objetivo não conta como melhora', () => {
+    const ctx = ctxWith();
+    // Falta Fire (sufixo) e os prefixos já estão cheios de lixo-compatível: só sufixo ajuda.
+    const t2: TargetSpec = { baseId: 'Ring', ilvl: 80, rarity: 'rare', requirements: [{ id: 'f', family: 'suffix:Fire', minTier: 3, required: true, priority: 1 }, { id: 'c', family: 'suffix:Cold', minTier: 2, required: true, priority: 1 }] };
+    const opts = stepOptions(ctx, rare(['Mana1']), t2, { currency: 'exalt' }, null);
+    for (const o of opts) expect(o.improves!).toBeLessThanOrEqual(o.keepsPossible! + 1e-9);
+  });
 });
